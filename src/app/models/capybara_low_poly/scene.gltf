@@ -1,0 +1,316 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 3103,
+      "max": [
+        1.690163254737854,
+        2.8734543323516846,
+        1.0150601863861084
+      ],
+      "min": [
+        -2.231621742248535,
+        -0.059660498052835464,
+        -0.8153485655784607
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 37236,
+      "componentType": 5126,
+      "count": 3103,
+      "max": [
+        0.9983043074607849,
+        0.9987539052963257,
+        0.9998361468315125
+      ],
+      "min": [
+        -0.9989548921585083,
+        -0.9993729591369629,
+        -0.9995877742767334
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 3103,
+      "max": [
+        0.9992746114730835,
+        0.9997159242630005,
+        0.9976518154144287,
+        1.0
+      ],
+      "min": [
+        -0.9998292326927185,
+        -0.9869878888130188,
+        -0.9983791708946228,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 3103,
+      "max": [
+        0.9981352090835571,
+        0.9835458397865295
+      ],
+      "min": [
+        0.0018647756660357118,
+        0.0018647756660357118
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 24824,
+      "componentType": 5126,
+      "count": 3103,
+      "max": [
+        0.9981352090835571,
+        0.9835458397865295
+      ],
+      "min": [
+        0.0018647756660357118,
+        0.0018647756660357118
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 17298,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Nyilonelycompany (https://sketchfab.com/Nyilonelycompany)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/capybara-low-poly-2b9e0100da7245079fa3d54eedd81030",
+      "title": "Capybara (Low Poly)"
+    },
+    "generator": "Sketchfab-15.3.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 69192,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 49648,
+      "byteOffset": 69192,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 74472,
+      "byteOffset": 118840,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 49648,
+      "byteOffset": 193312,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 242960,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/Capybara_mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Capybara_mat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Capybara_mat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.041142982530994375
+        }
+      },
+      "name": "Capybara_mat",
+      "normalTexture": {
+        "index": 2,
+        "scale": 0.43123940949153367
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.6689544196706123,
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.9127646865209493
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Capybara_mesh_Capybara_mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.22142532467842102,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.916629873861678e-17,
+        -0.22142532467842102,
+        0.0,
+        0.0,
+        0.22142532467842102,
+        4.916629873861678e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "e974a5a3d8654e78bbf56d0db7311418.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        23.27277301600667,
+        1.8820080496489562,
+        -95.74475432238687,
+        0.0,
+        -12.569276743537214,
+        97.73919733017547,
+        -1.1340148006490645,
+        0.0,
+        94.93479149711173,
+        12.479212818778482,
+        23.32119235790171,
+        0.0,
+        -0.4303589463233948,
+        0.3560543358325958,
+        -0.08489638566970825,
+        1.0
+      ],
+      "name": "Capybara_mesh"
+    },
+    {
+      "mesh": 0,
+      "name": "Capybara_mesh_Capybara_mat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
