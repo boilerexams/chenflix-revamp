@@ -18,7 +18,7 @@ export async function loadAssets(assets: Assets) {
 
   await Promise.all(
     Object.values(assets).map(async (v) => {
-      const path = '/public/' + v.path
+      const path = v.path
       const response = await fetch(path)
       const blob = await response.blob()
       const url = URL.createObjectURL(blob)

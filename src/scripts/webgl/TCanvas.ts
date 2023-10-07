@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { gl } from './core/WebGL'
 import { Assets, loadAssets } from './utils/assetLoader'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js' // Import GLTFLoader
+import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js' // Import GLTFLoader
 import { controls } from './utils/OrbitControls'
 import vertexShader from './shader/vs.glsl'
 import fragmentShader from './shader/fs.glsl'
@@ -31,11 +31,7 @@ export class TCanvas {
     const gltf = this.assets.model.data as GLTF
     const model = gltf.scene
 
-    const spotLight = new THREE.SpotLight(0xffffff,  5, 100, 0.22, 1);
-    spotLight.position.set(0, 10, 0);
-    spotLight.castShadow = true;
-    // spotLight.shadow.bias = -0.0001;
-    model.add(spotLight);
+
       
     // You can adjust the position, rotation, and scale of the model here
     model.position.set(0, -0.3, 0)
@@ -49,11 +45,23 @@ export class TCanvas {
       side: THREE.DoubleSide
     });
     const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-    groundMesh.castShadow = false;
+    
     groundMesh.receiveShadow = true;
     model.add(groundMesh);
+   
+    const spotLight = new THREE.SpotLight(0xffffff,  5, 100, 0.22, 1);
+    spotLight.position.set(0, 10, 0);
+    spotLight.castShadow = true;
+    // spotLight.shadow.bias = -0.0001;
+    model.add(spotLight);
 
-  
+    model.traverse(function (node) {
+      if (node instanceof THREE.Mesh) {
+        node.castShadow = true;
+      }
+    });
+
+    groundMesh.castShadow = false;
     gl.scene.add(model)
   }
 
