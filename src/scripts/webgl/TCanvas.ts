@@ -23,7 +23,7 @@ export class TCanvas {
   private init() {
     gl.setup(this.container)
     gl.scene.background = new THREE.Color('black')
-    gl.camera.position.set(2.5, 0.5, 0);
+    gl.camera.position.set(1.6, 0.3, 0);
   }
 
   private createObjects() {
@@ -32,12 +32,11 @@ export class TCanvas {
 
 
       
-    // You can adjust the position, rotation, and scale of the model here
     model.position.set(0, -0.3, 0)
     model.rotation.set(0, 2, 0)
     model.scale.set(1, 1, 1)
 
-    const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32); // Reduced size from 20 to 10
+    const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32); 
     groundGeometry.rotateX(-Math.PI / 2);
     const groundMaterial = new THREE.MeshStandardMaterial({
       color: 'black',
@@ -49,7 +48,7 @@ export class TCanvas {
     model.add(groundMesh);
    
     const spotLight = new THREE.SpotLight(0xffffff,  5, 100, 0.22, 1);
-    spotLight.position.set(0, 5, 0);
+    spotLight.position.set(0, 3.5, 0);
     spotLight.castShadow = true;
     // spotLight.shadow.bias = -0.0001;
     model.add(spotLight);

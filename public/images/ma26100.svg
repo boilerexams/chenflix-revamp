@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 250 200" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<clipPath id="ArtboardFrame">
+<rect height="200" width="250" x="0" y="0"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="Layer-1" vectornator:layerName="Layer 1">
+<path d="M59.3715-1.63147L59.3715 201.23" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="9"/>
+<path d="M-6.2053 139.733L250.843 139.902" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="9"/>
+<path d="M60.3597 140.727C61.7762 137.507-4.79122 204.293-4.79122 204.293L-4.79122 204.293" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="9"/>
+<path d="M21.2009 179.73C21.2009 179.73 15.5482 121.947 30.3097 84.3849C45.0475 46.8837 60.0109 37.7991 60.0109 37.7991C60.0109 37.7991 98.1133 36.8484 127.171 60.1035C145.188 74.5229 159.727 98.2484 159.551 137.277" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="12"/>
+<path d="M159.551 137.277C159.257 140.263 155.844 151.038 115.812 171.058C79.9836 188.976 22.3384 175.821 22.3384 175.821" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="12"/>
+<path d="M59.7507 40.5481C59.7507 40.5481 82.1677 59.2215 96.3755 97.4956C110.694 136.067 110.414 173.726 110.414 173.726" fill="none" opacity="1" stroke="#4f04c9" stroke-linecap="butt" stroke-linejoin="round" stroke-width="12"/>
+</g>
+</svg>

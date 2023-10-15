@@ -14,6 +14,8 @@
     "three": "^0.153.0"
   },
   "devDependencies": {
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
     "@types/three": "^0.152.1",
     "autoprefixer": "^10.4.14",
     "prettier": "^2.8.4",

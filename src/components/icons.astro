@@ -1,0 +1,153 @@
+---
+interface Props {
+  img?: string
+  title?: string
+  footer: string
+  semes?: string[]
+  links?: string[]
+  children?: HTMLElement | HTMLElement[]
+}
+
+const { img = 'https://fakeimg.pl/640x360', title = 'Default title', footer = 'Your name', semes = [""], links = [""]} = Astro.props
+---
+
+<div class="card">
+  <div class="card__image">
+    <img src={img} alt="" />
+    <div>
+      <div class="image-overlay">
+       {title}
+      </div>
+    
+  </div>
+  <!-- <div class="card__content">
+    <h3>
+      <a href={url}>{title}</a>
+    </h3>
+    <p>
+      <slot>Chen da 🐐</slot>
+    </p>
+    <small>
+      {footer}
+    </small>
+  </div> -->
+  <div class="card__overlay">
+    <div class="overlay-text">
+      {semes.map((semester, idx) => <a href={links[idx]}> {semester}</a>)}
+
+    </div>
+  </div>
+</div>
+
+
+<style is:global>
+  .card {
+    /* display: flex; */
+    flex-direction: column;
+    border: 5px solid red;
+    border-radius: 0.5rem;
+    min-width: 20vw;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5vh;
+    transition: box-shadow 0.15s ease-in-out;
+    background-color: white;
+    position: relative;
+  }
+
+  .card__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay-text {
+    color: white;
+    font-size: 2em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay-text a:hover {
+    color: #666; 
+  }
+
+
+  .card:hover .card__overlay {
+    opacity: 0.9;
+    /* filter: blur(2px); */
+  }
+  .card:hover .overlay-text {
+    opacity: 1;
+  }
+
+
+  .card:focus-within a:focus {
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .card__image {
+    height: 25vh;
+    position: relative;
+
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 50px;
+    font-weight:bolder ;
+    color: Black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card__content {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-grow: 1; */
+    padding: 1rem;
+  }
+
+  .card__content a {
+    text-decoration: none;
+  }
+
+  .card__content a:focus {
+    text-decoration: underline;
+  }
+
+  .card__content a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .card__content:last-child {
+    /* margin-top: auto; */
+    padding-top: 1rem;
+  }
+</style>
