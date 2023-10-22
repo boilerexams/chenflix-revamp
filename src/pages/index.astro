@@ -2,14 +2,48 @@
 import CanvasContainer from '../components/CanvasContainer.astro'
 import Layout from '../components/Layout.astro'
 import Link from '../components/Link.astro'
+import ClassIcon from '../components/icons.astro'
+// import ma261 from 'images/ma26100.svg'
+// import { myFunction } from '../classes/icons.ts'
 
 ---
 
-<Layout title="Chenflix">
+<Layout title="three-template-with-astro">
   <main>
     <CanvasContainer/>
       <img class="overlay-image" src='images/chenflix.png' alt="Logo" />
+      <div class="icon-columns">
+        <div class="icon-column">
+          <!-- MA 162 -->
+          <ClassIcon 
+          img = 'images/chen.jpg' title = "MA 162" footer = "" semes = {['Fall 2023', 'Fall 2022', 'Fall 2019']} 
+          links = {['https://www.math.purdue.edu/~chenjk/MA162F23/MA162F23.html', 
+          'https://www.math.purdue.edu/~chenjk/MA162F22/MA162F22.html', 
+          'https://mediaspace.itap.purdue.edu/channel/Fall%202019%20-%20MA162%20-%20Chen/123690771']}/>
+          <!-- MA 261 -->
+          <ClassIcon  
+          img = 'images/chen.jpg' title = "MA 261" footer = "" semes = {["Summer 2023", "Spring 2023", "Fall 2021"]}
+          links = {['https://www.math.purdue.edu/~chenjk/MA261Su23/MA261Su23.html', 
+          'https://www.math.purdue.edu/~chenjk/MA261S23/MA261S23.html', 
+          'https://www.math.purdue.edu/~chenjk/MA261F21/MA261F21.html']}/>
+          <!-- MA 161 -->
+          <ClassIcon 
+          img = 'images/chen.jpg' title = "MA 161" footer = "" semes = {["Spring 2022"]} links = {["https://www.math.purdue.edu/~chenjk/MA161S22/MA161Sp22.html"]}/>
+        </div>
+        <div class="icon-column">
+          <!-- MA 303 -->
+          <ClassIcon
+          img = 'images/chen.jpg' title = "MA 303" footer = "" semes = {["Summer 2019"]} links = {["https://mediaspace.itap.purdue.edu/channel/Summer%202019%20-%20MA30300%20-%20Chen/118537081"]}/>
+          <!-- MA 265 -->
+          <ClassIcon 
+          img = 'images/chen.jpg' title = "MA 265" footer = "" semes = {["Summer 2018"]} links = {["https://mediaspace.itap.purdue.edu/channel/Summer-2018-MA-26500/94007531"]}/>
+          <!-- MA 266 -->
+          <ClassIcon
+          img = 'images/chen.jpg' title = "MA 266" footer = "" semes = {[""]} links = {[""]} />
+        </div>
+      </div>
     <Link class="link" href="https://www.boilerexams.com" target="_blank" rel="noopener noreferrer">By Boilerexams</Link>
+
   </main>
 </Layout>
 
@@ -17,7 +51,7 @@ import Link from '../components/Link.astro'
   main {
     width: 100%;
     height: 100%;
-    background-color: #000; /* Add this line */
+    background-color: black;
   }
   .link {
     position: absolute;
@@ -33,4 +67,15 @@ import Link from '../components/Link.astro'
     transform: translate(-50%, -50%);
     z-index: 1;
   }
+  .icon-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4vw;
+  }
+
+  .icon-column {
+    flex-direction: column;
+    padding-top: 1vw;
+  }
+
 </style>
