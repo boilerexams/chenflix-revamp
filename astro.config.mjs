@@ -1,12 +1,15 @@
-import { defineConfig } from 'astro/config'
-import glsl from 'vite-plugin-glsl'
+import { defineConfig } from 'astro/config';
+import glsl from 'vite-plugin-glsl';
 
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind"
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nemutas.github.io',
   base: '/',
   server: {
     host: false,
+    port:3000
   },
   vite: {
     plugins: [glsl()],
@@ -15,10 +18,11 @@ export default defineConfig({
       rollupOptions: {
         output: {
           assetFileNames: '[ext]/[name][extname]',
-          entryFileNames: 'script/entry.js',
-        },
+          entryFileNames: 'script/entry.js'
+        }
       },
-      cssCodeSplit: false,
-    },
+      cssCodeSplit: false
+    }
   },
-})
+  integrations: [react(), tailwind()]
+});
