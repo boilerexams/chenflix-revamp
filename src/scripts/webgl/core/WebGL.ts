@@ -21,7 +21,7 @@ class WebGL {
 
 
     this.scene = new THREE.Scene()
-    this.camera = new THREE.PerspectiveCamera(50, aspect, 0.01, 100)
+    this.camera = new THREE.PerspectiveCamera(50, aspect, 0.01, 10)
 
     window.addEventListener('resize', this.handleResize)
   }

@@ -17,11 +17,11 @@ const { color = '#fff', ...attr } = Astro.props
   @use '../styles/mixins/medias.scss' as *;
 
   a {
-    font-size: 20px;
+    font-size: 1.5rem;
     color: var(--color);
     opacity: 0.5;
     @include sp {
-      font-size: 20px;
+      font-size: 1.5rem;
     }
     @include hoverable {
       transition: opacity 0.3s ease;

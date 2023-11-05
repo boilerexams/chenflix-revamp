@@ -1,0 +1,42 @@
+---
+import {CourseCard} from "./icons"
+// import ma261 from 'images/ma26100.svg'
+// import { myFunction } from '../classes/icons.ts'
+
+---
+
+
+<div class="icon-columns">
+    <div class = "icon-column">
+        <CourseCard semesterList = {['Spring 2022']} semesterLinks = {['/ma162FA23']} courseAbbreviation="ma16100" courseName = "MA 16100" courseDescr = "Plane Analytic Geometry And Calculus I"/>
+        <CourseCard semesterList = {['Fall 2023', 'Fall 2022', 'Fall 2019']} semesterLinks= {['/ma162FA23']} courseAbbreviation="ma16200" courseName = "MA 16200" courseDescr = "Plane Analytic Geometry And Calculus II"/>
+        <CourseCard semesterList = {['Summer 2023', 'Spring 2023', 'Fall 2021']} semesterLinks = {['/ma162FA23']} courseAbbreviation="ma26100" courseName = "MA 26100" courseDescr = "Multivariate Calculus"/>
+    </div>
+
+    <div class = "icon-column">
+        <CourseCard semesterList = {['Summer 2018']}  semesterLinks = {['/ma162FA23']} courseAbbreviation="ma26500" courseName = "MA 26500" courseDescr = "Linear Algebra"/>
+        <CourseCard semesterList = {['Summer 2016']}  semesterLinks = {['/ma162FA23']} courseAbbreviation="ma26600" courseName = "MA 26600" courseDescr = "Ordinary Differential Equations"/>
+        <CourseCard semesterList = {['Spring 2024', 'Summer 2019']}  semesterLinks = {['/ma162FA23']} courseAbbreviation="ma30300" courseName = "MA 30300" courseDescr = "Differential Equations And Partial Differential Equations For Engineering And the Sciences"/>
+    </div>
+    
+  </div>
+
+
+
+<style>
+    .icon-columns {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 6vw;
+        padding-top: 5vh;
+    }
+
+    .icon-column {
+        flex-direction: column;
+        align-items: center;
+        display: relative;
+        justify-content: center;
+        max-width: 16vw;
+    }
+
+</style>./icons.tsx

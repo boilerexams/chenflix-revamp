@@ -1,7 +1,9 @@
 import * as THREE from 'three'
 import { gl } from './core/WebGL'
-import { Assets, loadAssets } from './utils/assetLoader'
-import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js' // Import GLTFLoader
+import type { Assets } from './utils/assetLoader';
+import { loadAssets } from './utils/assetLoader';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { controls } from './utils/OrbitControls'
 import vertexShader from './shader/vs.glsl'
 import fragmentShader from './shader/fs.glsl'

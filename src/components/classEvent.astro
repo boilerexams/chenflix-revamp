@@ -1,0 +1,37 @@
+---
+interface Props {
+  description?: string
+  weekday?: string
+  date?: string
+  slides?: string
+  videos?: string
+  notes?: string
+}
+
+const { description = '', weekday = 'Monday', date = '', slides = '', videos = '', notes = ''} = Astro.props
+---
+
+<div class="card">
+    <div class="card__image">
+    <div class="overlay-text">
+        {weekday}, {date}--{description}{slides && <><a href = {slides}> Slides</a>, </>}
+        { videos && <><a href = {videos}> Videos</a>, </>}{ notes && <><a href = {notes}> Notes </a></>}
+        <input type = 'checkbox'/>
+        <br>
+    </div>
+</div>
+
+<style>
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.overlay-text {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size:larger;
+}
+</style>

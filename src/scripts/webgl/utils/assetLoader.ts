@@ -1,7 +1,8 @@
 import * as THREE from 'three'
-import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader'
-import { resolvePath } from '../../utils'
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader'
+// import { resolvePath } from '../../utils'
 
 export type Assets = {
   [key in string]: {
