@@ -3,35 +3,223 @@ interface Props {
   description?: string
   weekday?: string
   date?: string
-  slides?: string
   videos?: string
   notes?: string
 }
 
-const { description = '', weekday = 'Monday', date = '', slides = '', videos = '', notes = ''} = Astro.props
+
+const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''} = Astro.props
 ---
 
-<div class="card">
-    <div class="card__image">
-    <div class="overlay-text">
-        {weekday}, {date}--{description}{slides && <><a href = {slides}> Slides</a>, </>}
-        { videos && <><a href = {videos}> Videos</a>, </>}{ notes && <><a href = {notes}> Notes </a></>}
-        <input type = 'checkbox'/>
-        <br>
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Other meta tags -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+  <div class="card">
+    <div class="card__checkbox">
+      <label class="form-control">
+      
+        <input class = checkbox type="checkbox" name="checkbox" />
+      </label>
     </div>
-</div>
+
+    <div class="card__star">
+      <!-- You can replace this with an actual star element -->
+        <i class="star fa-regular fa-star fa-xl" style="color: #ead810;"></i>
+    </div>
+
+    <div class="cardDate">
+      <p>{weekday}, {date}</p>
+    </div>
+    <div class="card__descr">
+      <p>{description}</p> 
+    </div>
+    <div class="cardVideos">
+      {videos ?  <a href={videos} target="_video"><i class="video fa-solid fa-video fa-lg"></i></a>: <i class="videoff fa-solid fa-video-slash fa-lg"></i>}
+
+    </div>
+    <div class="cardNotes">
+      {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg"></i></a> : <i class="notesoff fa-solid fa-file-circle-xmark fa-lg"></i>}
+    </div>
+    
+
+
+  </div>
+</body>
+
+
+<!-- Star effects -->
+  <script>
+    document.querySelectorAll('.star').forEach(function(star) {
+      star.addEventListener('click', function() {
+        if (star.classList.contains('fa-regular')) {
+          star.className = 'star fa-solid fa-star fa-flip fa-xl';
+          setTimeout(function() {
+            star.className = ' star fa-solid fa-star fa-xl';
+          }, 500);
+          return;
+        } 
+
+        if (star.classList.contains('fa-solid')) {
+          star.className = 'star fa-solid fa-star fa-flip fa-xl';
+          setTimeout(function() {
+            star.className = 'star fa-regular fa-star fa-xl';
+          }, 500);
+          return
+        } 
+      });
+    });
+  </script>
+
+
 
 <style>
+  
 
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
 }
-.overlay-text {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size:larger;
+
+.card__checkbox,
+.card__content,
+.card__star,
+.cardVideos,
+.cardNotes,
+.card__descr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
 }
+
+
+.star:hover,
+.checkbox:hover {
+  cursor: pointer;
+}
+
+
+.cardNotes,
+.cardVideos {
+  width: 5vw;
+  align-items: center;
+}
+
+.star {
+  position: relative;
+  top: -0.15rem;
+}
+
+
+.card__checkbox,
+.card__star {
+  width:4.5vw;
+  align-items: baseline;
+}
+
+
+
+.card__content {
+  width: 15vw; /* Adjust as needed */
+  align-items: baseline;
+}
+
+.cardDate {
+  width: 10vw; /* Adjust as needed */
+  align-items: baseline;
+}
+
+.card__descr {
+  width: 55vw; /* Adjust as needed */
+  align-items: baseline;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size:large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: black;
+  margin: 0;
+  color: #dc1a28;
+  width: 1.5em;
+  height: 1.5em;
+  /* padding-left: 1.15rem; */
+  border: 0.2em solid #dc1a28;
+  border-radius: 0.15em;
+
+  display: grid;
+  place-content: center;
+}
+
+.video,
+.videoff {
+  color: #dc1a28;
+}
+.video:hover,
+.notesoff {
+  filter: brightness(70%);
+}
+.videoff {
+  filter: brightness(50%);
+}
+
+.notes,
+.notesoff {
+  color: #dc1a28;
+}
+.notes:hover {
+  filter: brightness(60%);
+}
+
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #dc1a28;
+   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform-origin: bottom left;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.form-control {
+  /* padding-left: 0.5rem; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  /* display: grid; */
+  /* grid-template-columns: 1em auto; */
+  gap: 0.5em;
+}
+
 </style>

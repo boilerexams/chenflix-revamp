@@ -6,9 +6,9 @@
 html {
   width: 100%;
   height: 100%;
-  font-size: calc(1000vw / 750);
-  @include pc {
-    font-size: calc(1000vw / 1500);
+  font-size: calc(1000vw / 1500);
+  @include sp {
+  font-size: calc(1150vw / 500);
   }
   @include fonts.poppins;
 }
