@@ -1,7 +1,3 @@
-
-
-
-
 export function CourseCard({courseAbbreviation, courseName, courseDescr, semesterList, semesterLinks}: 
 	{courseAbbreviation:string, courseName:string, courseDescr: string, semesterList: string[], semesterLinks: string[]}) {
 	const secondaryColor = "#9e1b32";
@@ -33,12 +29,12 @@ export function CourseCard({courseAbbreviation, courseName, courseDescr, semeste
 					<h2 className="z-10 max-w-[90%]opacity-75 text-xl" >{courseDescr}</h2>
 				</div>
 				<div className="absolute left-0 top-0 grid aspect-[2.5/2] h-full w-full select-none place-items-center rounded-3xl text-center opacity-0 transition-all duration-300 group-hover:opacity-100">
-					<div className="text-white place-items-center text-5xl hover:cursor-pointer font-bold">
+					<div className="text-white place-items-center text-5xl  hover:cursor-pointer font-bold">
 						{semesterList.map((semester, index) => (
-							<p key={index} style = {{paddingTop: '1rem'}}>
-							<a href={semesterLinks[index]} className=" hover:text-black">
-								{semester}
-							</a>
+							<p key={index} style={{margin: "1rem 0"}}>
+								<a href={semesterLinks[index]} className=" hover:text-black">
+									{semester}
+								</a>
 							</p>
 						))}
 					</div>

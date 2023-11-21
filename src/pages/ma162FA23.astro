@@ -1,12 +1,9 @@
 ---
 import ClassEvent from '../components/classEvent.astro'
 import chen from '../../public/images/chenflix.png'
-import MyComponent from '../components/slider'
+// import MyComponent from '../components/slider'
 
 ---
-
-
-
 <html>
 <head>
   <title></title>
@@ -14,61 +11,142 @@ import MyComponent from '../components/slider'
 </head>
 
 <body>
-    <a href="/">
-      <img class="overlay-image" src={chen.src} alt="Logo" />
-    </a>
 
-    <div class="button-container">
-      <button color="success" id="reverseButton" >Reverse</button>
+    <div>
+      <a href="/">
+        <img class="overlay-image" src={chen.src} alt="Logo" />
+      </a>
     </div>
 
-    <MyComponent client:load />
+
+    <div class="button-container">
+      <div class="title-container">
+        <h1>MA 16200 Fall 2023</h1>
+      </div>
+      <button color="success" id="reverseButton" ><i class="fa-solid fa-up-down"></i></button>
+    </div>
+
+    <!-- <MyComponent/> --> 
+    
+    <!-- <div class="flex-wrapper"> -->
     <div class = "card__image" >
 
       <div id="classEventContainer" class="class-event-container">
 
 
-        <ClassEvent weekday = 'Monday' description = 'something math related today folks' date = '8/21'
+        <ClassEvent weekday = 'Mon' description = 'Course Introduction' date = '8/21'
+        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/MA%2016200%20Fall%202023%20Introduction.pdf'
+        />
+        <ClassEvent weekday = 'Mon' description = 'Lesson 1 (13.1 Vectors and 13.2 Vectors in Three Dimensions (part1))' date = '8/21'
+        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
+        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%202--13.2%282%29.pdf'
+        />
+        <ClassEvent weekday = 'Wed' description = 'Lesson 2 (13.2 Vectors in Three Dimensions (part2))' date = '8/23'
+        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_t4sab8oc' 
+        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%203--13.3.pdf'
+        />
+        <ClassEvent weekday = 'Fri' description = 'Lesson 3 (13.3 Dot Product)' date = '8/25'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
         />
-        <ClassEvent weekday = 'Wednesday ' description = 'something math related today folks' date = '8/23'
+        <ClassEvent weekday = 'Mon' description = 'Lesson 4 (13.4 Cross Product)' date = '8/28'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
         />
-        <ClassEvent weekday = 'Friday' description = 'something math related today folks' date = '8/26'
+        <ClassEvent weekday = 'Wed' description = 'Lesson 5 (6.2 Region Between Curves)' date = '8/30'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
         />
-        <ClassEvent weekday = 'Monday' description = 'something math related today folks' date = '8/29'
+        <ClassEvent weekday = 'Fri' description = 'Lesson 6 (6.3 Volumes by Slicing)' date = '9/1'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
         />
-        <ClassEvent weekday = 'Wednesday ' description = 'something math related today folks' date = '8/31'
-        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
-        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        <ClassEvent weekday = 'Mon' description = 'Labor Day (no class)' date = '9/4'
         />
-        <ClassEvent weekday = 'Friday' description = 'something math related today folks' date = '9/1'
-        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
-        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
-        />
-        <ClassEvent weekday = 'Monday' description = 'something math related today folks' date = '8/21'
-        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
-        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
-        />
-        <ClassEvent weekday = 'Wednesday ' description = 'something math related today folks' date = '8/23'
+        <ClassEvent weekday = 'Wed' description = 'Lesson 7 (6.4 Volumes by Shells)' date = '9/6'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
         />
 
+        <ClassEvent weekday = 'Fri' description = 'Lesson 8 (6.5+6.6 Length and Surface Area)' date = '9/8'
+        videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
+        notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        />
+
+        <ClassEvent weekday='Mon' description='Lesson 9 (6.7 Physical Applications (part 1))' date='9/11'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Lesson 10 (6.7 Physical Applications (part 2))' date='9/13'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 11 (8.2 Integration by Parts)' date='9/15'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Wed' description='Lesson 12 (8.3 Trig Integrals (part 1))' date='9/18'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Mon' description='Exam 1 Review' date='9/20'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 13 (8.3 Trig Integrals (part 2))' date='9/22'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 14 (8.4 Trig Substitution (part 1))' date='9/25'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Lesson 15 (8.4 Trig Substitution (part 2))' date='9/27'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 16 (8.5 Partial Fractions (part 1))' date='9/29'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 17 (8.5 Partial Fractions (part 2))' date='10/2'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Lesson 18 (8.9 Improper Integrals)' date='10/4'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='No Class (compensation for evening exam)' date='10/6'/>
+
+        <ClassEvent weekday='Mon' description='No class (October Break)' date='10/9'/>
+        <ClassEvent weekday='Wed' description='Lesson 19 (10.1 Sequences and Series:  An Overview)' date='10/11'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 20 (10.2 Sequences)' date='10/13'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 21 (10.3 Infinite Series)' date='10/16'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Exam 2 Review' date='10/18'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='No Class (compensation for evening exam)' date='10/20'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 22 (10.4 The Divergence and Integral Tests)' date='10/23'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Lesson 23 (10.5 Comparison Tests)' date='10/25'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 24 (10.6 Alternating Series)' date='10/27'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 25 (10.7 Ratio and Root Tests)' date='10/30'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Lesson 26 (10.8 Choosing a Convergent Test)' date='11/1'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 27 (11.1 Approximating Functions Using Polynomials (part 1))' date='11/3'
+        videos='Video_Link' notes='Notes_Link'/>
+
+        <ClassEvent weekday='Mon' description='Lesson 28 (11.1 Approximating Functions Using Polynomials (part 2))' date='11/6'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Wed' description='Exam 3 Review' date='11/8'
+        videos='Video_Link' notes='Notes_Link'/>
+        <ClassEvent weekday='Fri' description='Lesson 29 (11.2 Properties of Power Series (part 1))' date='11/10'
+        />
+
+
+
+
+
       </div>
-    </div>
+    <!-- </div> -->
+  
+  </div>
 </body>
 </html>
 
 <script>
 
-const button = document.getElementById('reverseButton');
+  const button = document.getElementById('reverseButton');
   const container = document.getElementById('classEventContainer');
 
   if (button && container) {
@@ -86,6 +164,7 @@ const button = document.getElementById('reverseButton');
 <style lang="scss">
 .overlay-image {
     position: absolute;
+    display: block;
     padding-top: 10%;
     left: 50%;
     width: 30%;
@@ -98,6 +177,7 @@ const button = document.getElementById('reverseButton');
     height: 100%;
     background-color: black;
     color: white;
+    font-family: 'Poppins', sans-serif;
     
   }
 
@@ -111,23 +191,31 @@ const button = document.getElementById('reverseButton');
     .class-event-container {
       flex-direction: column;
       gap: 1vh;
-      padding-top: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
     }
 
     .button-container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       padding-top: 10%;
     }
 
+    .title-container {
+      margin-bottom: 0.5em;
+      padding-top: 2%;
+      font-size: 3rem;
+    }
+
     #reverseButton {
-      font-family: 'Poppins', sans-serif;
-      font-size: 40px;
+      font-size: 2rem;
 
     }
     #reverseButton:hover {
       color: #dc1a28;
     }
+
 
 
   

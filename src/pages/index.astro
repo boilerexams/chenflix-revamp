@@ -1,7 +1,7 @@
 ---
 import CanvasContainer from '../components/CanvasContainer.astro'
 import Layout from '../components/Layout.astro'
-import Link from '../components/Link.astro'
+// import Link from '../components/Link.astro'
 import AllClassIcons from '../components/allClassIcons.astro'
 
 
@@ -14,8 +14,8 @@ import AllClassIcons from '../components/allClassIcons.astro'
     
     <CanvasContainer/>
     <img class="overlay-image" src='images/chenflix.png' alt="Logo" />
-    <AllClassIcons/>
-    <Link class="link" href="https://www.boilerexams.com" target="_blank" rel="noopener noreferrer">By Boilerexams</Link>
+    <AllClassIcons class="icons"/>
+    <!-- <Link class="link" href="https://www.boilerexams.com" target="_blank" rel="noopener noreferrer">By Boilerexams</Link> -->
 
   </main>
 </Layout>
@@ -23,7 +23,7 @@ import AllClassIcons from '../components/allClassIcons.astro'
 <style lang="scss">
   main {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: black;
   }
   .link {
@@ -34,11 +34,40 @@ import AllClassIcons from '../components/allClassIcons.astro'
 
   .overlay-image {
     position: absolute;
-    top: 10%;
+    padding-top: 10%;
     left: 50%;
     width: 30%;
+    // min-width: 50vw;
     transform: translate(-50%, -50%);
   }
+
+
+  /* CSS for mobile devices */
+  @media (max-width: 767px) {
+
+
+      main {
+      width: 100%;
+      min-height: 100vh;
+      background-color: black;
+    }
+    .overlay-image {
+      position: absolute;
+      padding-top: 25%;
+      left: 50%;
+      width: 60%;
+      // min-width: 50vw;
+      transform: translate(-50%, -50%);
+      
+    }
+
+    .icons {
+      padding-bottom: 1em;
+      
+    }
+  }
+
+
 
 </style>
 
