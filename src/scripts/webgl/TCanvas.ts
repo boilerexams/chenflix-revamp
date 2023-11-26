@@ -31,8 +31,6 @@ export class TCanvas {
   private createObjects() {
     const gltf = this.assets.model.data as GLTF
     const model = gltf.scene
-
-
       
     model.position.set(0, -0.3, 0)
     model.rotation.set(0, 2, 0)
