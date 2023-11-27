@@ -18,7 +18,7 @@ export function CourseCard({
   return (
     <div style={{ backgroundColor }} className="group relative my-4 aspect-[2.5/2] rounded-3xl hover:cursor-pointer hover:bg-transparent">
       {/* px-5 ? */}
-      <div className="relative z-10 flex aspect-[2.5/2] select-none flex-col items-center justify-center gap-2 rounded-3xl px-1 text-center font-bold text-white opacity-100 transition-all duration-300 hover:z-0 group-hover:opacity-0">
+      <div className="relative z-10 flex aspect-[2.5/2] select-none flex-col items-center justify-center gap-2 rounded-3xl px-1 text-center font-bold text-white opacity-100 transition-all duration-300 group-hover:z-0 group-hover:opacity-0">
         <div
           className="absolute left-0 top-0 h-full w-full rounded-3xl"
           style={{
@@ -34,7 +34,7 @@ export function CourseCard({
         <h1 className="z-10 text-3xl">{courseName}</h1>
         <h2 className="max-w-[90%]opacity-75 z-10 text-xs ">{courseDescr}</h2>
       </div>
-      <div className="absolute left-0 top-0 z-0 grid aspect-[2.5/2] h-full w-full select-none place-items-center rounded-3xl text-center opacity-0 transition-all duration-300 group-hover:opacity-100">
+      <div className="absolute left-0 top-0 z-0 group-hover:z-10 grid aspect-[2.5/2] h-full w-full select-none place-items-center rounded-3xl text-center opacity-0 transition-all duration-300 group-hover:opacity-100">
         <div className="place-items-center text-2xl font-bold  text-white hover:cursor-pointer">
           {semesterList.map((semester, index) => (
             <p key={index} style={{ margin: '0.5rem 0' }}>
