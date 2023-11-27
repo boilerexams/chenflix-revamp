@@ -25,8 +25,9 @@
     "@types/react-dom": "^18.2.14",
     "@types/three": "^0.152.1",
     "autoprefixer": "^10.4.14",
-    "prettier": "^2.8.4",
+    "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
     "ress": "^5.0.2",
     "sass": "^1.58.3",
     "vite-plugin-glsl": "^1.1.2"

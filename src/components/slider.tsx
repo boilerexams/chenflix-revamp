@@ -13,9 +13,9 @@ const MyComponent = () => {
 
   return (
     <div className="switch-container">
-      <Checkbox/>
+      <Checkbox />
     </div>
-  );
+  )
 }
 
-export default MyComponent;
+export default MyComponent

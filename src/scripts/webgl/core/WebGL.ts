@@ -19,7 +19,6 @@ class WebGL {
     this.renderer.setSize(width, height)
     this.renderer.shadowMap.enabled = true
 
-
     this.scene = new THREE.Scene()
     this.camera = new THREE.PerspectiveCamera(50, aspect, 0.01, 10)
 

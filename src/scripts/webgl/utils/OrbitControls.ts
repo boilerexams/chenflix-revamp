@@ -9,7 +9,7 @@ class OrbitControls {
     this.orbitControls.enableDamping = true
     this.orbitControls.dampingFactor = 0.1
     this.orbitControls.autoRotate = true
-    this.orbitControls.maxPolarAngle = 1.6;
+    this.orbitControls.maxPolarAngle = 1.6
     // this.orbitControls.maxAzimuthAngle = 0.1;
   }
 

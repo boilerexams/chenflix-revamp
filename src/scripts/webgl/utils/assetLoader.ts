@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 // import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader'
 // import { resolvePath } from '../../utils'
 
@@ -16,7 +16,6 @@ export type Assets = {
 export async function loadAssets(assets: Assets) {
   const gltfLoader = new GLTFLoader()
 
-
   await Promise.all(
     Object.values(assets).map(async (v) => {
       const path = v.path
@@ -25,7 +24,6 @@ export async function loadAssets(assets: Assets) {
       const url = URL.createObjectURL(blob)
       const gltf = await gltfLoader.loadAsync(path)
       v.data = gltf
-
     }),
   )
 }
