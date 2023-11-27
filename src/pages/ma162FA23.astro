@@ -202,16 +202,31 @@ import chen from '../../public/images/chenflix.png'
 
     .title-container {
       margin-bottom: 0.5em;
-      padding-top: 2%;
-      font-size: xx-large;
+      padding-top: 20%;
+      font-size: 3rem;
     }
 
     #reverseButton {
-      font-size: xx-large;
+      font-size: 2.5rem;
     }
     
     #reverseButton:hover {
       color: #dc1a28;
     }
-        
+
+    @media (max-width: 1000px) {
+
+      .overlay-image {
+        position: absolute;
+        padding-top: 25%;
+        left: 50%;
+        width: 60%;
+        // min-width: 50vw;
+        transform: translate(-50%, -50%);
+
+      }
+
+
+      }
+              
   </style>
