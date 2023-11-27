@@ -30,10 +30,10 @@ export function CourseCard({courseAbbreviation, courseName, courseDescr, semeste
 					<h2 className="z-10 max-w-[90%]opacity-75 text-sm ">{courseDescr}</h2>
 				</div>
 				<div className="absolute left-0 top-0 grid aspect-[2.5/2] h-full w-full select-none place-items-center rounded-3xl text-center opacity-0 transition-all duration-300 group-hover:opacity-100">
-					<div className="text-white place-items-center text-2xl  hover:cursor-pointer font-bold">
+					<div className="text-white place-items-center text-3xl  hover:cursor-pointer font-bold">
 						{semesterList.map((semester, index) => (
-							<p key={index} style={{margin: "1rem 0"}}>
-								<a href={semesterLinks[index]} className=" hover:text-black">
+							<p key={index} style={{margin: "0.5rem 0"}}>
+								<a href={semesterLinks[index]} className= 'flex h-full w-full flex-col items-center justify-center rounded-tr-3xl text-center text-white transition-all duration-150 md:hover:text-black'>
 									{semester}
 								</a>
 							</p>
