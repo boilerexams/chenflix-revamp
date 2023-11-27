@@ -25,7 +25,6 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
   <div class="card">
     <div class="card__checkbox">
       <label class="form-control">
-      
         <input class = checkbox type="checkbox" name="checkbox" />
       </label>
     </div>
@@ -99,7 +98,7 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 
@@ -141,7 +140,7 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
 }
 
 .card__descr {
-  width: 55vw; /* Adjust as needed */
+  width: 45vw; /* Adjust as needed */
   align-items: baseline;
 }
 
@@ -215,12 +214,22 @@ input[type="checkbox"]:checked::before {
 
 .form-control {
   /* padding-left: 0.5rem; */
-  font-size: 1.5rem;
+  /* font-size: 1.5rem;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.1; */
   /* display: grid; */
   /* grid-template-columns: 1em auto; */
-  gap: 0.5em;
+  /* gap: 0.5em; */
+}
+
+
+@media (max-width: 767px) {
+
+  .card__checkbox,
+  .card__star {
+    display: none;
+  }
+
 }
 
 </style>
