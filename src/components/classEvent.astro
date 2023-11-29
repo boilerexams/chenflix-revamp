@@ -33,7 +33,7 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
 
     <div class="card__star">
       <!-- You can replace this with an actual star element -->
-        <i class="star fa-regular fa-star fa-xl" style="color: #ead810;"></i>
+      <i class="star fa-regular fa-star fa-xl" style="color: #ead810;" id={description + "-star"}></i>
     </div>
 
     <div class="cardDate">
@@ -59,41 +59,47 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
 <script>
 
 function load(){    
-  document.querySelectorAll('.checkbox').forEach(function(checkbox) {
-    var checked = localStorage.getItem(checkbox.id) 
-
-    if (checked && JSON.parse(checked) == "true") {
-      document.getElementById(checkbox.id)?.setAttribute("checked", "checked")
-      console.log("asdfa")
-    } else {
-      document.getElementById(checkbox.id)?.removeAttribute("checked")
-    }
-    
-  })
-
-}
-function save(){
-    document.querySelectorAll('.checkbox').forEach(function(checkbox) {
-      checkbox.addEventListener('click', function() {
-        var checked = localStorage.getItem(checkbox.id)
-        if (checked) {
-          if (JSON.parse(checked) == "false") {
-            localStorage.setItem(checkbox.id, JSON.stringify("true"));
-            console.log("checked")
-          } else {
-            console.log("unchecked")
-            localStorage.setItem(checkbox.id, JSON.stringify("false"));
-          }
-          console.log("asdkjfn")
+  document.querySelectorAll('.checkbox, .star').forEach(function(item) {
+    var status = localStorage.getItem(item.id);
+    if (status) {
+      if (item.classList.contains('checkbox')) {
+        if (JSON.parse(status) == "true") {
+          document.getElementById(item.id)?.setAttribute("checked", "checked");
         } else {
-          localStorage.setItem(checkbox.id, JSON.stringify("true"));
+          document.getElementById(item.id)?.removeAttribute("checked");
         }
-      })
-  })
+      } else if (item.classList.contains('star')) {
+        if (JSON.parse(status) == "true") {
+          item.className = 'star fa-solid fa-star fa-xl';
+        } else {
+          item.className = 'star fa-regular fa-star fa-xl';
+        }
+      }
+    }
+  });
 }
 
-load()
-save()
+function save(){
+  document.querySelectorAll('.checkbox, .star').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var status = localStorage.getItem(item.id);
+      if (status) {
+        if (JSON.parse(status) == "false") {
+          localStorage.setItem(item.id, JSON.stringify("true"));
+        } else {
+          localStorage.setItem(item.id, JSON.stringify("false"));
+        }
+      } else {
+        localStorage.setItem(item.id, JSON.stringify("true"));
+      }
+    });
+  });
+}
+
+load();
+save();
+
+
 
 </script>
 <!-- Star effects -->
