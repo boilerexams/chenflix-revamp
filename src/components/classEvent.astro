@@ -1,4 +1,5 @@
 ---
+
 interface Props {
   description?: string
   weekday?: string
@@ -25,7 +26,8 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
   <div class="card">
     <div class="card__checkbox">
       <label class="form-control">
-        <input class = checkbox type="checkbox" name="checkbox" />
+      
+        <input class = checkbox type="checkbox" name="checkbox" id = {description}/>
       </label>
     </div>
 
@@ -53,7 +55,47 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
   </div>
 </body>
 
+<!-- local storage cache -->
+<script>
 
+function load(){    
+  document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+    var checked = localStorage.getItem(checkbox.id) 
+
+    if (checked && JSON.parse(checked) == "true") {
+      document.getElementById(checkbox.id)?.setAttribute("checked", "checked")
+      console.log("asdfa")
+    } else {
+      document.getElementById(checkbox.id)?.removeAttribute("checked")
+    }
+    
+  })
+
+}
+function save(){
+    document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+      checkbox.addEventListener('click', function() {
+        var checked = localStorage.getItem(checkbox.id)
+        if (checked) {
+          if (JSON.parse(checked) == "false") {
+            localStorage.setItem(checkbox.id, JSON.stringify("true"));
+            console.log("checked")
+          } else {
+            console.log("unchecked")
+            localStorage.setItem(checkbox.id, JSON.stringify("false"));
+          }
+          console.log("asdkjfn")
+        } else {
+          localStorage.setItem(checkbox.id, JSON.stringify("true"));
+        }
+      })
+  })
+}
+
+load()
+save()
+
+</script>
 <!-- Star effects -->
   <script>
     document.querySelectorAll('.star').forEach(function(star) {
