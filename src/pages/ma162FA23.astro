@@ -27,7 +27,7 @@ import chen from '../../public/images/chenflix.png'
       <div class="title-container">
         <h1>MA 16200 Fall 2023</h1>
       </div>
-      <button color="success" id="reverseButton" ><i class="fa-solid fa-up-down"></i></button>
+      <button color="success" id="reverseButton" ><i class="fa-solid fa-arrows-rotate" id="icon"></i></button>
     </div>
 
     <!-- <MyComponent/> --> 
@@ -44,26 +44,37 @@ import chen from '../../public/images/chenflix.png'
         <ClassEvent weekday = 'Mon' description = 'Lesson 1 (13.1 Vectors and 13.2 Vectors in Three Dimensions (part1))' date = '8/21'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%202--13.2%282%29.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
         />
         <ClassEvent weekday = 'Wed' description = 'Lesson 2 (13.2 Vectors in Three Dimensions (part2))' date = '8/23'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_t4sab8oc' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%203--13.3.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
+
         />
         <ClassEvent weekday = 'Fri' description = 'Lesson 3 (13.3 Dot Product)' date = '8/25'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
+
         />
         <ClassEvent weekday = 'Mon' description = 'Lesson 4 (13.4 Cross Product)' date = '8/28'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
+
         />
         <ClassEvent weekday = 'Wed' description = 'Lesson 5 (6.2 Region Between Curves)' date = '8/30'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
+
         />
         <ClassEvent weekday = 'Fri' description = 'Lesson 6 (6.3 Volumes by Slicing)' date = '9/1'
         videos = 'https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_gueptc0u' 
         notes = 'https://www.math.purdue.edu/~chenjk/MA162F23/Lesson%201--13.1,%2013.2%281%29.pdf'
+        boilerexams='https://www.boilerexams.com/courses/MA16200/topics/Orthogonal%20Vectors/0c3532c4-f27b-46b2-99f0-cb18ac18f284'
+
         />
         <ClassEvent weekday = 'Mon' description = 'Labor Day (no class)' date = '9/4'
         />
@@ -144,13 +155,33 @@ import chen from '../../public/images/chenflix.png'
 </html>
 
 <script>
-
   const button = document.getElementById('reverseButton');
+  const icon = document.getElementById('icon');
   const container = document.getElementById('classEventContainer');
+  let isSpinning = false;
 
-  if (button && container) {
+  if (button && container && icon) {
     button.addEventListener('click', function() {
       Array.from(container.children).reverse().forEach(child => container.appendChild(child));
+      
+      // Add or remove the spin animation
+      if (isSpinning) {
+        icon.classList.remove('fa-spin');
+        icon.classList.add('fa-spin-reverse');
+      } 
+      // else {
+      //   icon.classList.remove('fa-spin-reverse');
+      //   icon.classList.add('fa-spin');
+      // }
+      
+      // Reverse the spinning state
+      isSpinning = !isSpinning;
+      
+      // Remove the spin animation after 1 second
+      setTimeout(function() {
+        icon.classList.remove('fa-spin');
+        icon.classList.remove('fa-spin-reverse');
+      }, 1050);
     });
   }
 </script>
@@ -158,7 +189,11 @@ import chen from '../../public/images/chenflix.png'
 
 
 
-
+<style>
+  .fa-spin-reverse {
+    animation-direction: reverse;
+  }
+</style>
 
 <style lang="scss">
 .overlay-image {

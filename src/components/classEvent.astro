@@ -6,10 +6,11 @@ interface Props {
   date?: string
   videos?: string
   notes?: string
+  boilerexams?: string
 }
 
 
-const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''} = Astro.props
+const { description = '', weekday = 'Monday', date = '', videos = '', notes = '', boilerexams = ''} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -44,10 +45,12 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
     </div>
     <div class="cardVideos">
       {videos ?  <a href={videos} target="_video"><i class="video fa-solid fa-video fa-lg"></i></a>: <i class="videoff fa-solid fa-video-slash fa-lg"></i>}
-
     </div>
     <div class="cardNotes">
       {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg"></i></a> : <i class="notesoff fa-solid fa-file-circle-xmark fa-lg"></i>}
+    </div>
+    <div class="cardVideos">
+      {boilerexams ? <a href={boilerexams} target="_notes"><i class="video fa-solid fa-pencil fa-lg"></i></a> : <i class="videoff fa-solid fa-pencil fa-lg"></i>}
     </div>
   </div>
 </body>
