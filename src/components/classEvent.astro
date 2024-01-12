@@ -44,13 +44,13 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
       <p>{description}</p> 
     </div>
     <div class="cardVideos">
-      {videos ?  <a href={videos} target="_video"><i class="video fa-solid fa-video fa-lg"></i></a>: <i class="videoff fa-solid fa-video-slash fa-lg"></i>}
+      {videos ?  <a href={videos} target="_video"><i class="video fa-solid fa-video fa-lg"  style={{ fontSize: '1.5em' }}></i></a>: <i class="videoff fa-solid fa-video-slash fa-lg"  style={{ fontSize: '1.5em' }}></i>}
     </div>
     <div class="cardNotes">
-      {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg"></i></a> : <i class="notesoff fa-solid fa-file-circle-xmark fa-lg"></i>}
+      {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg" style={{ fontSize: '1.5em' }}></i></a> :  <i class="notesoff fa-solid fa-file-circle-xmark fa-lg" style={{ fontSize: '1.5em' }}></i>}
     </div>
-    <div class="cardVideos">
-      {boilerexams ? <a href={boilerexams} target="_notes"><i class="video fa-solid fa-pencil fa-lg"></i></a> : <i class="videoff fa-solid fa-pencil fa-lg"></i>}
+    <div class="cardBoiler">
+      {boilerexams ? <a href={boilerexams} target="_notes"><i class="video fa-solid fa-pencil fa-lg"  style={{ fontSize: '1.5em' }}></i></a> : <i class="videoff fa-solid fa-pencil fa-lg"  style={{ fontSize: '1.5em' }}></i>}
     </div>
   </div>
 </body>
@@ -140,6 +140,7 @@ save();
 .card__content,
 .card__star,
 .cardVideos,
+.cardBoiler,
 .cardNotes,
 .card__descr,
 .videoff,
@@ -162,6 +163,7 @@ save();
 .cardNotes,
 .cardVideos,
 .videoff,
+.cardBoiler,
  .notesoff {
   width: 5vw;
   align-items: center;
@@ -282,6 +284,7 @@ input[type="checkbox"]:checked::before {
 
   .card__checkbox,
   .card__star,
+  .cardBoiler,
   .cardDate {
     display: none;
   }
@@ -289,15 +292,21 @@ input[type="checkbox"]:checked::before {
   .card__descr {
     width: 65vw; /* Adjust as needed */
     align-items: baseline;
-    font-size: larger;
+    font-size: xx-large;
+    margin-top: 1em;
   }
 
   .cardNotes,
   .cardVideos,
   .videoff,
-  .notesoff, {
-    width:10vw;
+  .notesoff {
+    display: inline-flex; /* Ensure proper scaling behavior */
     align-items: center;
+    width: 10vw;
+    font-size: 2em; /* Base font size for scaling */
+  }
+  .notesoff {
+    padding-left: 1.5rem;
   }
 
 

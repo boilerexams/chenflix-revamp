@@ -16,7 +16,7 @@ export function CourseCard({
   const backgroundColor = '#dc1a28'
   const graphicLink = `/course_logos/${courseAbbreviation}.png`
   return (
-    <div style={{ backgroundColor }} className="group relative my-4 aspect-[2.5/2] rounded-3xl hover:cursor-pointer hover:bg-transparent">
+    <div style={{ backgroundColor, marginTop: '1rem' }} className="group relative aspect-[2.5/2] rounded-3xl hover:cursor-pointer hover:bg-transparent ">
       {/* px-5 ? */}
       <div className="relative z-10 flex aspect-[2.5/2] select-none flex-col items-center justify-center gap-2 rounded-3xl px-1 text-center font-bold text-white opacity-100 transition-all duration-300 group-hover:z-0 group-hover:opacity-0">
         <div
@@ -51,3 +51,4 @@ export function CourseCard({
     </div>
   )
 }
+

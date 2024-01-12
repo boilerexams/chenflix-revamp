@@ -29,15 +29,19 @@ import {CourseCard} from "./icons"
         justify-content: space-between;
         align-items: center;
         padding: 0 6%;
+        height: 100vh;
     }
 
     .icon-column {
         flex-direction: column;
         align-items: center;
         display: relative;
-        justify-content: center;
+        /* justify-content: center; */
         max-width: 18%;
-        padding-top: 1em;
+        min-width: 18%;
+        /* min-width: 500px; */
+
+        overflow: hidden
         
     }
 
@@ -45,18 +49,19 @@ import {CourseCard} from "./icons"
     @media (max-width: 767px) {
         .icon-columns {
             flex-direction: column;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             align-items: center;
-            width: 100%;
+            width: 100vw;
             height: 100%;
             padding-top: 20%;
-            /* padding-bottom: 5%; */
+            padding-bottom: 5%;
             background-color: black;
         }
         .icon-column {
             background-color: black;
             min-width: 60%;
-            padding-top: 0em;
+            
+            
         }
     }
 
