@@ -1,0 +1,179 @@
+---
+import ClassEvent from '../components/classEvent.astro'
+import chen from '../../public/images/chenflix.png'
+// import MyComponent from '../components/slider'
+
+
+---
+<html>
+<head>
+  <title></title>
+  <link rel="icon" type="image/svg+xml" href="images/capyFav.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+
+    <div>
+      <a href="/">
+        <img class="overlay-image" src={chen.src} alt="Logo" />
+      </a>
+    </div>
+
+
+    <div class="button-container">
+      <div class="title-container">
+        <h1>MA 30300 Spring 2024</h1>
+      </div>
+      <button color="success" id="reverseButton" ><i class="fa-solid fa-arrows-rotate" id="icon"></i></button>
+    </div>
+
+    <!-- <MyComponent/> --> 
+    
+    <!-- <div class="flex-wrapper"> -->
+    <div class = "card__image" >
+
+      <div id="classEventContainer" class="class-event-container">
+
+
+        <ClassEvent weekday='Mon' description='Course Introduction' date='1/8' 
+        notes='https://www.math.purdue.edu/~chenjk/MA303S24/MA%2030300%20Spring%202024%20Introduction.pdf'/>
+        <ClassEvent weekday='Mon' description='Lesson 1 (5.2 The Eigenvalue Method for Homogeneous Systems)' date='1/8' 
+        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_xv382j1a' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%201%20%285.2%29.pdf'/>
+        <ClassEvent weekday='Wed' description='Lesson 2 (5.5 Multiple Eigenvalue Solutions) (No Video unfortunately)' date='1/10'  notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%202%20%285.5%29.pdf'/>
+        <ClassEvent weekday='Fri' description='Lesson 3 (5.3 Solution Curves of Linear Systems)' date='1/12' 
+        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_ynb5u3h7' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%203%20%285.3%29.pdf'/>
+        <ClassEvent weekday='Wed' description='Lesson 4 (6.1 Stability and the Phase Planes)' date='1/17' 
+        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_t0ggp2si' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%204%20%286.1%29.pdf'/>
+        <ClassEvent weekday='Fri' description='Lesson 5 (6.2 Linear and Almost Linear Systems (part 1))' date='1/19' 
+        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_kcy6r9g1' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%205%20%286.2-1%29.pdf'/>
+        
+
+      </div>
+    <!-- </div> -->
+  
+  </div>
+</body>
+</html>
+
+<script>
+  const button = document.getElementById('reverseButton');
+  const icon = document.getElementById('icon');
+  const container = document.getElementById('classEventContainer');
+  let isSpinning = false;
+
+  if (button && container && icon) {
+    button.addEventListener('click', function() {
+      Array.from(container.children).reverse().forEach(child => container.appendChild(child));
+      
+      // Add or remove the spin animation
+      if (isSpinning) {
+        icon.classList.remove('fa-spin');
+        icon.classList.add('fa-spin-reverse');
+      } 
+      // else {
+      //   icon.classList.remove('fa-spin-reverse');
+      //   icon.classList.add('fa-spin');
+      // }
+      
+      isSpinning = !isSpinning;
+      
+    
+      setTimeout(function() {
+        icon.classList.remove('fa-spin');
+        icon.classList.remove('fa-spin-reverse');
+      }, 1050);
+    });
+  }
+</script>
+
+
+
+
+<style>
+  .fa-spin-reverse {
+    animation-direction: reverse;
+  }
+</style>
+
+<style lang="scss">
+.overlay-image {
+    position: absolute;
+    display: block;
+    padding-top: 10%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  .card__image {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    }
+
+    .class-event-container {
+      flex-direction: column;
+      gap: 1vh;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10%;
+    }
+
+    .title-container {
+      margin-bottom: 0.5rem;
+      font-size: 3rem;
+    }
+
+    #reverseButton {
+      font-size: 2rem;
+    }
+    
+    #reverseButton:hover {
+      color: #dc1a28;
+    }
+
+    @media (max-width: 1000px) {
+
+      .overlay-image {
+        position: absolute;
+        padding-top: 25%;
+        left: 50%;
+        width: 60%;
+        // min-width: 50vw;
+        transform: translate(-50%, -50%);
+
+      }
+
+      .title-container {
+        padding-top: 20%;
+        margin-bottom: 0.5rem;
+        font-size: 3rem;
+      }
+      #reverseButton {
+        font-size: 3rem;
+      }
+
+
+      }
+              
+  </style>

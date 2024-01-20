@@ -1,0 +1,200 @@
+---
+import chen from '../../public/images/chenflix.png'
+import capy from '../../public/images/sorrycapyDark.jpg'
+// import MyComponent from '../components/slider'
+
+
+---
+<html>
+<head>
+  <title></title>
+  <link rel="icon" type="image/svg+xml" href="images/capyFav.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <div>
+      <a href="/">
+        <img class="overlay-image" src={chen.src} alt="Logo" />
+      </a>
+    </div>
+
+
+    <div class="button-container">
+        
+      <div class="title-container">
+        <h1>MA 26500 Summer 2018</h1> 
+        
+      </div>
+  
+      <img class="capy" src={capy.src} />
+      <div class = "icons">
+        <a href={'https://mediaspace.itap.purdue.edu/channel/Summer-2018-MA-26500/94007531'}><i class="video fa-solid fa-video fa-lg"  style={{fontSize: '3em' }}></i></a>
+        <a href={'https://mediaspace.itap.purdue.edu/channel/Summer-2018-MA-26500/94007531'}><i class="video fa-solid fa-file fa-lg" style={{fontSize: '3em' }}></i></a>
+      </div>
+      <p>Sorry, this class is older but the Videos and Notes are here!</p>
+      
+    </div>
+
+    <!-- <MyComponent/> --> 
+    
+    <!-- <div class="flex-wrapper"> -->
+    <div class = "card__image" >
+
+      <div id="classEventContainer" class="class-event-container">
+        
+        
+
+
+      </div>
+    <!-- </div> -->
+  
+  </div>
+</body>
+</html>
+
+<script>
+  const button = document.getElementById('reverseButton');
+  const icon = document.getElementById('icon');
+  const container = document.getElementById('classEventContainer');
+  let isSpinning = false;
+
+  if (button && container && icon) {
+    button.addEventListener('click', function() {
+      Array.from(container.children).reverse().forEach(child => container.appendChild(child));
+      
+      // Add or remove the spin animation
+      if (isSpinning) {
+        icon.classList.remove('fa-spin');
+        icon.classList.add('fa-spin-reverse');
+      } 
+      // else {
+      //   icon.classList.remove('fa-spin-reverse');
+      //   icon.classList.add('fa-spin');
+      // }
+      
+      isSpinning = !isSpinning;
+      
+    
+      setTimeout(function() {
+        icon.classList.remove('fa-spin');
+        icon.classList.remove('fa-spin-reverse');
+      }, 1050);
+    });
+  }
+</script>
+
+
+
+
+<style>
+.video {
+    color: #dc1a28;
+    width: 10rem;
+}
+.fa-spin-reverse {
+    animation-direction: reverse;
+}
+
+.icons {
+    justify-content: center;
+    align-items: center;
+}
+</style>
+
+<style lang="scss">
+.overlay-image {
+    position: absolute;
+    display: block;
+    padding-top: 10%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .capy {
+    width: 20%;
+    border-radius: 80px;
+    padding-bottom: 2%;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  header{
+   margin-bottom:  30px;
+  }
+
+  .card__image {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    }
+
+    .class-event-container {
+      flex-direction: column;
+      gap: 1vh;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10%;
+    }
+
+    .title-container {
+      font-size: 3rem;
+    }
+
+    #reverseButton {
+      font-size: 2rem;
+    }
+    
+    #reverseButton:hover {
+      color: #dc1a28;
+    }
+
+    @media (max-width: 1000px) {
+
+      .overlay-image {
+        position: absolute;
+        padding-top: 25%;
+        left: 50%;
+        width: 60%;
+        // min-width: 50vw;
+        transform: translate(-50%, -50%);
+
+      }
+      .capy {
+        width: 50%;
+        border-radius: 80px;
+    }
+
+
+      .title-container {
+        padding-top: 20%;
+        margin-bottom: 0.5rem;
+        font-size: 3rem;
+      }
+      #reverseButton {
+        font-size: 3rem;
+      }
+
+
+      }
+              
+  </style>

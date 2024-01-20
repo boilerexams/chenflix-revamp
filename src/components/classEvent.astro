@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-const { description = '', weekday = 'Monday', date = '', videos = '', notes = '', boilerexams = ''} = Astro.props
+const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '', boilerexams = ''} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -28,13 +28,13 @@ const { description = '', weekday = 'Monday', date = '', videos = '', notes = ''
     <div class="card__checkbox">
       <label class="form-control">
       
-        <input class = checkbox type="checkbox" name="checkbox" id = {description}/>
+        <input class = checkbox type="checkbox" name="checkbox" id = {description + date}/>
       </label>
     </div>
 
     <div class="card__star">
       <!-- You can replace this with an actual star element -->
-      <i class="star fa-regular fa-star fa-xl" style="color: #ead810;" id={description + "-star"}></i>
+      <i class="star fa-regular fa-star fa-xl" style="color: #ead810;" id={description + date + "-star"}></i>
     </div>
 
     <div class="cardDate">
@@ -290,7 +290,7 @@ input[type="checkbox"]:checked::before {
   }
 
   .card__descr {
-    width: 65vw; /* Adjust as needed */
+    width: 65vw; 
     align-items: baseline;
     font-size: xx-large;
     margin-top: 1em;
@@ -300,10 +300,10 @@ input[type="checkbox"]:checked::before {
   .cardVideos,
   .videoff,
   .notesoff {
-    display: inline-flex; /* Ensure proper scaling behavior */
+    display: inline-flex; 
     align-items: center;
     width: 10vw;
-    font-size: 2em; /* Base font size for scaling */
+    font-size: 2em; 
   }
   .notesoff {
     padding-left: 1.5rem;
