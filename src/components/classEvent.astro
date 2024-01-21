@@ -1,5 +1,5 @@
 ---
-
+import BE from '../../public/images/BXlogoSubscript.png'
 interface Props {
   description?: string
   weekday?: string
@@ -33,8 +33,7 @@ const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '
     </div>
 
     <div class="card__star">
-      <!-- You can replace this with an actual star element -->
-      <i class="star fa-regular fa-star fa-xl" style="color: #ead810;" id={description + date + "-star"}></i>
+      <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + "-star"}></i>
     </div>
 
     <div class="cardDate">
@@ -50,7 +49,7 @@ const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '
       {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg" style={{ fontSize: '1.5em' }}></i></a> :  <i class="notesoff fa-solid fa-file-circle-xmark fa-lg" style={{ fontSize: '1.5em' }}></i>}
     </div>
     <div class="cardBoiler">
-      {boilerexams ? <a href={boilerexams} target="_notes"><i class="video fa-solid fa-pencil fa-lg"  style={{ fontSize: '1.5em' }}></i></a> : <i class="videoff fa-solid fa-pencil fa-lg"  style={{ fontSize: '1.5em' }}></i>}
+      {boilerexams ? <a href={boilerexams} target="_notes"><img class="boilerexams" src={BE.src} alt="Logo" /></a> : <img class="boilerexamsoff" src={BE.src} alt="Logo" />}
     </div>
   </div>
 </body>
@@ -144,7 +143,7 @@ save();
 .cardNotes,
 .card__descr,
 .videoff,
- .notesoff
+ .notesoff,
  {
   display: flex;
   flex-direction: column;
@@ -164,6 +163,8 @@ save();
 .cardVideos,
 .videoff,
 .cardBoiler,
+.boilerexams,
+.boilerexamsoff,
  .notesoff {
   width: 5vw;
   align-items: center;
@@ -226,12 +227,18 @@ input[type="checkbox"] {
 .videoff {
   color: #dc1a28;
 }
-.video:hover
+.boilerexams,
+.boilerexamsoff{
+  width:45px; 
+}
+.video:hover,
+.boilerexams:hover
 {
   filter: brightness(70%);
 }
 .videoff,
- .notesoff {
+ .notesoff,
+ .boilerexamsoff {
   filter: brightness(50%);
 }
 .notesoff {
