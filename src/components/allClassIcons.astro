@@ -42,7 +42,30 @@ import {CourseCard} from "./icons"
         /* min-width: 500px; */
     }
 
-    /* CSS for devices with width less than 767px */
+
+
+
+    @media (max-width: 1100px) {
+        .icon-columns {
+            padding-top: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20%;
+            height: 100vh;
+        }
+
+        .icon-column {
+            flex-direction: column;
+            align-items: center;
+            display: relative;
+            /* justify-content: center; */
+            max-width: 43%;
+            min-width: 43%;
+            /* min-width: 500px; */
+        }
+    }    
+    
     @media (max-width: 767px) {
         .icon-columns {
             flex-direction: column;
