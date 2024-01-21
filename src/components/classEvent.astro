@@ -132,7 +132,7 @@ save();
 .card {
   display: flex;
   justify-content: space-between;
-  padding-top: 1%;
+  padding-top: 0.5%;
 }
 
 .card__checkbox,
@@ -143,6 +143,8 @@ save();
 .cardNotes,
 .card__descr,
 .videoff,
+.boilerexams,
+.boilerexamsoff,
  .notesoff,
  {
   display: flex;
@@ -163,10 +165,8 @@ save();
 .cardVideos,
 .videoff,
 .cardBoiler,
-.boilerexams,
-.boilerexamsoff,
- .notesoff {
-  width: 5vw;
+.notesoff {
+  width: 60px;
   align-items: center;
 }
 
@@ -178,30 +178,30 @@ save();
 
 .card__checkbox,
 .card__star {
-  width:4.5vw;
+  width: 50px;
   align-items: baseline;
 }
 
 .card__content {
-  width: 15vw; /* Adjust as needed */
+  width: 100px; /* Adjust as needed */
   align-items: baseline;
   
 }
 
 .cardDate {
-  width: 10vw; /* Adjust as needed */
+  width: 120px; /* Adjust as needed */
   align-items: baseline;
 }
 
 .card__descr {
-  width: 60vw; /* Adjust as needed */
+  width: 50vw; /* Adjust as needed */
   align-items: baseline;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
-  font-size:large;
+  font-size: medium;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -229,7 +229,8 @@ input[type="checkbox"] {
 }
 .boilerexams,
 .boilerexamsoff{
-  width:45px; 
+  width: 30px; 
+  align-items: center;
 }
 .video:hover,
 .boilerexams:hover
@@ -242,7 +243,7 @@ input[type="checkbox"] {
   filter: brightness(50%);
 }
 .notesoff {
-  padding-left: 0.55rem;
+  padding-left: -0.55rem;
 }
 
 
@@ -287,7 +288,7 @@ input[type="checkbox"]:checked::before {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 767px) {
 
   .card__checkbox,
   .card__star,
@@ -313,7 +314,7 @@ input[type="checkbox"]:checked::before {
     font-size: 2em; 
   }
   .notesoff {
-    padding-left: 1.5rem;
+    padding-left: -1.5rem;
   }
 
 
