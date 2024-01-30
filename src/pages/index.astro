@@ -6,70 +6,13 @@ import AllClassIcons from '../components/allClassIcons.astro'
 
 
 ---
-
-
-
 <Layout title="Chenflix">
-  <main>
-    
+  <main class="bg-black text-white font-poppins">
     <CanvasContainer/>
-    <img class="overlay-image" src='images/chenflix.png' alt="Logo" />
-    <AllClassIcons class="icons"/>
-    <!-- <Link class="link" href="https://www.boilerexams.com" target="_blank" rel="noopener noreferrer">By Boilerexams</Link> -->
 
+    <div class="relative"> <img class="absolute top-4 left-1/2 transform -translate-x-1/2 w-1/3" src='images/chenflix.png' alt="Logo" />
+      <a href="/ChensGallery" class="absolute top-4 left-1/2 transform -translate-x-1/2 mt-28 hover:opacity-50">Chen's Gallery</p> </div>
+    <AllClassIcons class="icons"/>
   </main>
 </Layout>
-
-<style lang="scss">
-  main {
-    width: 100%;
-    min-height: 100vh;
-    background-color: black;
-  }
-  .link {
-    margin-top: 2rem;
-    position: absolute;
-    bottom: 1rem;
-    right: 10rem;
-  }
-
-  .overlay-image {
-    position: absolute;
-    padding-top: 10%;
-    left: 50%;
-    width: 30%;
-    transform: translate(-50%, -50%);
-  }
-
-
-
-  /* CSS for mobile devices */
-  @media (max-width: 767px) {
-
-
-      main {
-      width: 100%;
-      min-height: 100vh;
-      background-color: black;
-    }
-    .overlay-image {
-      position: absolute;
-      padding-top: 25%;
-      left: 50%;
-      width: 60%;
-      // min-width: 50vw;
-      transform: translate(-50%, -50%);
-      
-    }
-
-    .icons {
-      padding-bottom: 1em;
-      
-    }
-  }
-
-
-
-</style>
-
 

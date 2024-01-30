@@ -23,33 +23,32 @@ const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '
 </head>
 
 
-<body>
-  <div class="card">
-    <div class="card__checkbox">
-      <label class="form-control">
-      
-        <input class = checkbox type="checkbox" name="checkbox" id = {description + date}/>
+<body class = "font-poppins text-white text-base font-medium flex flex-col items-center">
+  <div class="flex justify-between py-px">
+    <div class="flex flex-col items-center justify-center w-4 align-baseline">
+      <label class="mb-1">
+        <input class = 'checkbox cursor-pointer' type="checkbox" name="checkbox" id = {description + date}/>
       </label>
     </div>
 
-    <div class="card__star">
+    <div class="flex cursor-pointer flex-col items-center justify-center w-16 align-baseline mb-1">
       <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + "-star"}></i>
     </div>
 
-    <div class="cardDate">
+    <div class="w-1/6 align-baseline">
       <p>{weekday}, {date}</p>
     </div>
-    <div class="card__descr">
+    <div class="w-4/5 align-baseline">
       <p>{description}</p> 
     </div>
-    <div class="cardVideos">
-      {videos ?  <a href={videos} target="_video"><i class="video fa-solid fa-video fa-lg"  style={{ fontSize: '1.5em' }}></i></a>: <i class="videoff fa-solid fa-video-slash fa-lg"  style={{ fontSize: '1.5em' }}></i>}
+    <div class="w-16 align-baseline">
+      {videos ?  <a href={videos} ><i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl"></i></a>: <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" ></i>}
     </div>
-    <div class="cardNotes">
-      {notes ? <a href={notes} target="_notes"><i class="notes fa-solid fa-file fa-lg" style={{ fontSize: '1.5em' }}></i></a> :  <i class="notesoff fa-solid fa-file-circle-xmark fa-lg" style={{ fontSize: '1.5em' }}></i>}
+    <div class="w-16 align-baseline">
+      {notes ? <a href={notes} ><i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl"></i></a> :  <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl"></i>}
     </div>
-    <div class="cardBoiler">
-      {boilerexams ? <a href={boilerexams} target="_notes"><img class="boilerexams" src={BE.src} alt="Logo" /></a> : <img class="boilerexamsoff" src={BE.src} alt="Logo" />}
+    <div class="w-16 align-baseline">
+      {boilerexams ? <a href={boilerexams} ><img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" /></a> : <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />}
     </div>
   </div>
 </body>
@@ -123,90 +122,7 @@ save();
       });
     });
   </script>
-
-
-
 <style>
-  
-
-.card {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0.5%;
-}
-
-.card__checkbox,
-.card__content,
-.card__star,
-.cardVideos,
-.cardBoiler,
-.cardNotes,
-.card__descr,
-.videoff,
-.boilerexams,
-.boilerexamsoff,
- .notesoff,
- {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* padding-bottom: 1%; */
-}
-
-
-.star:hover,
-.checkbox:hover {
-  cursor: pointer;
-}
-
-
-.cardNotes,
-.cardVideos,
-.videoff,
-.cardBoiler,
-.notesoff {
-  width: 60px;
-  align-items: center;
-}
-
-.star {
-  position: relative;
-  top: -0.1rem;
-}
-
-
-.card__checkbox,
-.card__star {
-  width: 50px;
-  align-items: baseline;
-}
-
-.card__content {
-  width: 100px; /* Adjust as needed */
-  align-items: baseline;
-  
-}
-
-.cardDate {
-  width: 120px; /* Adjust as needed */
-  align-items: baseline;
-}
-
-.card__descr {
-  width: 50vw; /* Adjust as needed */
-  align-items: baseline;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 input[type="checkbox"] {
   -webkit-appearance: none;
@@ -216,45 +132,11 @@ input[type="checkbox"] {
   color: #dc1a28;
   width: 1.5em;
   height: 1.5em;
-  /* padding-left: 1.15rem; */
   border: 0.2em solid #dc1a28;
   border-radius: 0.15em;
   display: grid;
   place-content: center;
 }
-
-.video,
-.videoff {
-  color: #dc1a28;
-}
-.boilerexams,
-.boilerexamsoff{
-  width: 30px; 
-  align-items: center;
-}
-.video:hover,
-.boilerexams:hover
-{
-  filter: brightness(70%);
-}
-.videoff,
- .notesoff,
- .boilerexamsoff {
-  filter: brightness(50%);
-}
-.notesoff {
-  padding-left: -0.55rem;
-}
-
-
-.notes,
-.notesoff {
-  color: #dc1a28;
-}
-.notes:hover {
-  filter: brightness(60%);
-}
-
 
 input[type="checkbox"]::before {
   content: "";
@@ -267,57 +149,11 @@ input[type="checkbox"]::before {
   transform-origin: bottom left;
 }
 
-.form-control + .form-control {
-  margin-top: 1em;
-}
-
 input[type="checkbox"]:checked::before {
   transform: scale(1);
   transform-origin: bottom left;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
-.form-control {
-  /* padding-left: 0.5rem; */
-  /* font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.1;
-  display: grid; */
-  /* grid-template-columns: 1em auto; */
-  /* gap: 0.5em; */
-}
-
-
-@media (max-width: 767px) {
-
-  .card__checkbox,
-  .card__star,
-  .cardBoiler,
-  .cardDate {
-    display: none;
-  }
-
-  .card__descr {
-    width: 65vw; 
-    align-items: baseline;
-    font-size: xx-large;
-    margin-top: 1em;
-  }
-
-  .cardNotes,
-  .cardVideos,
-  .videoff,
-  .notesoff {
-    display: inline-flex; 
-    align-items: center;
-    width: 10vw;
-    font-size: 2em; 
-  }
-  .notesoff {
-    padding-left: -1.5rem;
-  }
-
-
-}
 
 </style>
