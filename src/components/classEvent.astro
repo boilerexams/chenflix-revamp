@@ -42,13 +42,16 @@ const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '
       <p>{description}</p> 
     </div>
     <div class="w-16 align-baseline">
-      {videos ?  <a href={videos} ><i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl"></i></a>: <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" ></i>}
+      {videos ?  <a href={videos} ><i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl"></i></a>: 
+      <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" ></i>}
     </div>
     <div class="w-16 align-baseline">
-      {notes ? <a href={notes} ><i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl"></i></a> :  <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl"></i>}
+      {notes ? <a href={notes} ><i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl"></i></a> :
+       <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl"></i>}
     </div>
     <div class="w-16 align-baseline">
-      {boilerexams ? <a href={boilerexams} ><img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" /></a> : <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />}
+      {boilerexams ? <a href={boilerexams} ><img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" /></a> :
+       <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />}
     </div>
   </div>
 </body>

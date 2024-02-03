@@ -10,31 +10,25 @@ import chen from '../../public/images/chenflix.png'
   <title></title>
   <link rel="icon" type="image/svg+xml" href="images/capyFav.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
- 
 
 </head>
 
-<body>
-
-    <div>
+<body class="bg-black text-white">
+    <div class="pt-4 w-1/3 mx-auto">
       <a href="/">
-        <img class="overlay-image" src={chen.src} alt="Logo" />
+        <img src={chen.src} alt="Logo" />
       </a>
     </div>
 
-
-    <div class="button-container">
-      <div class="title-container">
+    <div class="flex flex-col items-center">
+      <div class="mb-2 text-3xl">
         <h1>MA 30300 Spring 2024</h1>
       </div>
-      <button color="success" id="reverseButton" ><i class="fa-solid fa-arrows-rotate" id="icon"></i></button>
+      <button color="success" id="reverseButton" class="text-2xl hover:text-red-600"><i class="fa-solid fa-arrows-rotate" id="icon"></i></button>
     </div>
 
-    <div class = "card__image" >
-
-      <div id="classEventContainer" class="class-event-container">
-
-
+    <div class = "relative flex justify-center items-center h-auto" >
+      <div id="classEventContainer">
         <ClassEvent weekday='Mon' description='Course Introduction' date='1/8' 
         notes='https://www.math.purdue.edu/~chenjk/MA303S24/MA%2030300%20Spring%202024%20Introduction.pdf'/>
         <ClassEvent weekday='Mon' description='Lesson 1 (5.2 The Eigenvalue Method for Homogeneous Systems)' date='1/8' 
@@ -48,7 +42,6 @@ import chen from '../../public/images/chenflix.png'
         videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_kcy6r9g1' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%205%20%286.2-1%29.pdf'/>
         <ClassEvent weekday='test' description='Lesson 5 (6.2 Linear and Almost Linear Systems (part 1))' date='1/19' 
         videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_kcy6r9g1' notes= '../../pdfs/ma303SP24/chenTest.pdf'/>
-
       </div>
     <!-- </div> -->
   
@@ -87,9 +80,6 @@ import chen from '../../public/images/chenflix.png'
   }
 </script>
 
-
-
-
 <style>
   .fa-spin-reverse {
     animation-direction: reverse;
@@ -97,81 +87,8 @@ import chen from '../../public/images/chenflix.png'
 </style>
 
 <style lang="scss">
-.overlay-image {
-    position: absolute;
-    display: block;
-    padding-top: 10%;
-    left: 50%;
-    width: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
 
   body {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    color: white;
     font-family: 'Poppins', sans-serif;
-    
   }
-
-  .card__image {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    }
-
-    .class-event-container {
-      flex-direction: column;
-      gap: 1vh;
-      padding-top: 1%;
-      padding-bottom: 1%;
-    }
-
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 10%;
-    }
-
-    .title-container {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-
-    #reverseButton {
-      font-size: 1.5rem;
-    }
-    
-    #reverseButton:hover {
-      color: #dc1a28;
-    }
-
-    @media (max-width: 1000px) {
-
-      .overlay-image {
-        position: absolute;
-        padding-top: 25%;
-        left: 50%;
-        width: 60%;
-        // min-width: 50vw;
-        transform: translate(-50%, -50%);
-
-      }
-
-      .title-container {
-        padding-top: 20%;
-        margin-bottom: 0.5rem;
-        font-size: 3rem;
-      }
-      #reverseButton {
-        font-size: 3rem;
-      }
-
-
-      }
-              
-  </style>
+</style>
