@@ -31,11 +31,11 @@ const { date = '', description = '', weekday = 'Monday', videos = '', notes = ''
       <div class="flex flex-row justify-around">
         <div class="flex w-16 flex-col items-center justify-center align-baseline">
           <label class="mb-1">
-            <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date} />
+            <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date + 'mobile'} />
           </label>
         </div>
         <div class="mb-1 flex w-16 cursor-pointer flex-col items-center justify-center align-baseline">
-          <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star'}></i>
+          <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star' + 'mobile'}></i>
         </div>
         <div class="w-16 align-baseline">
           {
@@ -75,12 +75,12 @@ const { date = '', description = '', weekday = 'Monday', videos = '', notes = ''
     <div class="mx-auto hidden w-11/12 flex-row gap-4 md:flex lg:w-5/6 xl:w-3/4">
       <div class="flex w-8 shrink-0 grow-0 flex-col items-center justify-center align-baseline">
         <label class="">
-          <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date} />
+          <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date + 'desktop'} />
         </label>
       </div>
 
       <div class="flex w-8 shrink-0 grow-0 cursor-pointer flex-col items-center justify-center align-baseline">
-        <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star'}></i>
+        <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star' + 'desktop'}></i>
       </div>
 
       <div class="w-40 align-baseline">
