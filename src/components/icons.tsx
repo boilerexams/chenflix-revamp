@@ -23,7 +23,7 @@ export function CourseCard({
      >
       <a href={semesterLink}/>
       {/* px-5 ? */}
-      <a href = {semesterLink} target="_blank" className="relative z-10 flex aspect-[2.5/2] select-none flex-col items-center justify-center gap-2 rounded-3xl px-1 text-center font-bold text-white opacity-100 transition-all duration-300 group-hover:z-0 group-hover:opacity-50"
+      <a href = {semesterLink} className="relative z-10 flex aspect-[2.5/2] select-none flex-col items-center justify-center gap-2 rounded-3xl px-1 text-center font-bold text-white opacity-100 transition-all duration-300 group-hover:z-0 group-hover:opacity-50"
        > 
         <div 
           className="absolute left-0 top-0 h-full w-full rounded-3xl"
