@@ -9,154 +9,217 @@ interface Props {
   boilerexams?: string
 }
 
-
-const {  date = '', description = '', weekday = 'Monday', videos = '', notes = '', boilerexams = ''} = Astro.props
+const { date = '', description = '', weekday = 'Monday', videos = '', notes = '', boilerexams = '' } = Astro.props
 ---
 
-<!DOCTYPE html>
 <html>
-<head>
-  <!-- Other meta tags -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <head>
+    <!-- Other meta tags -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
+  <body class="font-poppins text-base font-medium text-white">
+    <div class="mx-auto block w-11/12 rounded-xl bg-slate-800 p-2 md:hidden">
+      <h2 class="ml-2 font-semibold text-slate-300">{description}</h2>
+      <h3 class="mb-4 ml-2 text-red-400">{weekday}, {date}</h3>
+      <div class="flex flex-row justify-around">
+        <div class="flex w-16 flex-col items-center justify-center align-baseline">
+          <label class="mb-1">
+            <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date} />
+          </label>
+        </div>
+        <div class="mb-1 flex w-16 cursor-pointer flex-col items-center justify-center align-baseline">
+          <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star'}></i>
+        </div>
+        <div class="w-16 align-baseline">
+          {
+            videos ? (
+              <a href={videos}>
+                <i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl" />
+              </a>
+            ) : (
+              <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" />
+            )
+          }
+        </div>
+        <div class="w-16 align-baseline">
+          {
+            notes ? (
+              <a href={notes}>
+                <i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl" />
+              </a>
+            ) : (
+              <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl" />
+            )
+          }
+        </div>
+        <div class="w-16 align-baseline">
+          {
+            boilerexams ? (
+              <a href={boilerexams}>
+                <img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" />
+              </a>
+            ) : (
+              <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />
+            )
+          }
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto hidden w-11/12 flex-row gap-4 md:flex lg:w-5/6 xl:w-3/4">
+      <div class="flex w-8 shrink-0 grow-0 flex-col items-center justify-center align-baseline">
+        <label class="">
+          <input class="checkbox cursor-pointer" type="checkbox" name="checkbox" id={description + date} />
+        </label>
+      </div>
 
-<body class = "font-poppins text-white text-base font-medium flex flex-col items-center">
-  <div class="flex justify-between py-px">
-    <div class="flex flex-col items-center justify-center w-4 align-baseline">
-      <label class="mb-1">
-        <input class = 'checkbox cursor-pointer' type="checkbox" name="checkbox" id = {description + date}/>
-      </label>
-    </div>
+      <div class="flex w-8 shrink-0 grow-0 cursor-pointer flex-col items-center justify-center align-baseline">
+        <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + '-star'}></i>
+      </div>
 
-    <div class="flex cursor-pointer flex-col items-center justify-center w-16 align-baseline mb-1">
-      <i class="star fa-regular fa-star fa-xl" style="color: #d0ba92;" id={description + date + "-star"}></i>
-    </div>
-
-    <div class="w-1/6 align-baseline">
-      <p>{weekday}, {date}</p>
-    </div>
-    <div class="w-4/5 align-baseline">
-      <p>{description}</p> 
-    </div>
-    <div class="w-16 align-baseline">
-      {videos ?  <a href={videos} ><i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl"></i></a>: 
-      <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" ></i>}
-    </div>
-    <div class="w-16 align-baseline">
-      {notes ? <a href={notes} ><i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl"></i></a> :
-       <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl"></i>}
-    </div>
-    <div class="w-16 align-baseline">
-      {boilerexams ? <a href={boilerexams} ><img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" /></a> :
-       <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />}
-    </div>
-  </div>
-</body>
-
-<!-- local storage cache -->
-<script>
-
-function load(){    
-  document.querySelectorAll('.checkbox, .star').forEach(function(item) {
-    var status = localStorage.getItem(item.id);
-    if (status) {
-      if (item.classList.contains('checkbox')) {
-        if (JSON.parse(status) == "true") {
-          document.getElementById(item.id)?.setAttribute("checked", "checked");
-        } else {
-          document.getElementById(item.id)?.removeAttribute("checked");
+      <div class="w-40 align-baseline">
+        <p>{weekday}, {date}</p>
+      </div>
+      <div class="w-3/4 align-baseline">
+        <p>{description}</p>
+      </div>
+      <div class="w-16 align-baseline">
+        {
+          videos ? (
+            <a href={videos}>
+              <i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl" />
+            </a>
+          ) : (
+            <i class="text-red-600 filter brightness-50 fa-solid fa-video-slash fa-xl" />
+          )
         }
-      } else if (item.classList.contains('star')) {
-        if (JSON.parse(status) == "true") {
-          item.className = 'star fa-solid fa-star fa-xl';
-        } else {
-          item.className = 'star fa-regular fa-star fa-xl';
+      </div>
+      <div class="w-16 align-baseline">
+        {
+          notes ? (
+            <a href={notes}>
+              <i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl" />
+            </a>
+          ) : (
+            <i class="text-red-600 filter brightness-50 fa-solid fa-file-circle-xmark fa-xl" />
+          )
         }
-      }
-    }
-  });
-}
-
-function save(){
-  document.querySelectorAll('.checkbox, .star').forEach(function(item) {
-    item.addEventListener('click', function() {
-      var status = localStorage.getItem(item.id);
-      if (status) {
-        if (JSON.parse(status) == "false") {
-          localStorage.setItem(item.id, JSON.stringify("true"));
-        } else {
-          localStorage.setItem(item.id, JSON.stringify("false"));
+      </div>
+      <div class="w-16 align-baseline">
+        {
+          boilerexams ? (
+            <a href={boilerexams}>
+              <img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" />
+            </a>
+          ) : (
+            <img class=" w-6 filter brightness-50" src={BE.src} alt="Logo" />
+          )
         }
-      } else {
-        localStorage.setItem(item.id, JSON.stringify("true"));
-      }
-    });
-  });
-}
+      </div>
+    </div>
+  </body>
 
-load();
-save();
-
-
-
-</script>
-<!-- Star effects -->
+  <!-- local storage cache -->
   <script>
-    document.querySelectorAll('.star').forEach(function(star) {
-      star.addEventListener('click', function() {
+    function load() {
+      document.querySelectorAll('.checkbox, .star').forEach(function (item) {
+        var status = localStorage.getItem(item.id)
+        if (status) {
+          if (item.classList.contains('checkbox')) {
+            if (JSON.parse(status) == 'true') {
+              document.getElementById(item.id)?.setAttribute('checked', 'checked')
+            } else {
+              document.getElementById(item.id)?.removeAttribute('checked')
+            }
+          } else if (item.classList.contains('star')) {
+            if (JSON.parse(status) == 'true') {
+              item.className = 'star fa-solid fa-star fa-xl'
+            } else {
+              item.className = 'star fa-regular fa-star fa-xl'
+            }
+          }
+        }
+      })
+    }
+
+    function save() {
+      document.querySelectorAll('.checkbox, .star').forEach(function (item) {
+        item.addEventListener('click', function () {
+          var status = localStorage.getItem(item.id)
+          if (status) {
+            if (JSON.parse(status) == 'false') {
+              localStorage.setItem(item.id, JSON.stringify('true'))
+            } else {
+              localStorage.setItem(item.id, JSON.stringify('false'))
+            }
+          } else {
+            localStorage.setItem(item.id, JSON.stringify('true'))
+          }
+        })
+      })
+    }
+
+    load()
+    save()
+  </script>
+  <!-- Star effects -->
+  <script>
+    document.querySelectorAll('.star').forEach(function (star) {
+      star.addEventListener('click', function () {
         if (star.classList.contains('fa-regular')) {
-          star.className = 'star fa-solid fa-star fa-flip fa-xl';
-          setTimeout(function() {
-            star.className = ' star fa-solid fa-star fa-xl';
-          }, 500);
-          return;
-        } 
+          star.className = 'star fa-solid fa-star fa-flip fa-xl'
+          setTimeout(function () {
+            star.className = ' star fa-solid fa-star fa-xl'
+          }, 500)
+          return
+        }
 
         if (star.classList.contains('fa-solid')) {
-          star.className = 'star fa-solid fa-star fa-flip fa-xl';
-          setTimeout(function() {
-            star.className = 'star fa-regular fa-star fa-xl';
-          }, 500);
+          star.className = 'star fa-solid fa-star fa-flip fa-xl'
+          setTimeout(function () {
+            star.className = 'star fa-regular fa-star fa-xl'
+          }, 500)
           return
-        } 
-      });
-    });
+        }
+      })
+    })
   </script>
-<style>
+  <style>
+    input[type='checkbox'] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: black;
+      margin: 0;
+      color: #dc1a28;
+      width: 1.5em;
+      height: 1.5em;
+      border: 0.2em solid #dc1a28;
+      border-radius: 0.15em;
+      display: grid;
+      place-content: center;
+    }
 
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: black;
-  margin: 0;
-  color: #dc1a28;
-  width: 1.5em;
-  height: 1.5em;
-  border: 0.2em solid #dc1a28;
-  border-radius: 0.15em;
-  display: grid;
-  place-content: center;
-}
+    input[type='checkbox']::before {
+      content: '';
+      width: 0.8em;
+      height: 0.8em;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em #dc1a28;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      transform-origin: bottom left;
+    }
 
-input[type="checkbox"]::before {
-  content: "";
-  width: 0.8em;
-  height: 0.8em;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #dc1a28;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transform-origin: bottom left;
-}
-
-input[type="checkbox"]:checked::before {
-  transform: scale(1);
-  transform-origin: bottom left;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-}
-
-
-</style>
+    input[type='checkbox']:checked::before {
+      transform: scale(1);
+      transform-origin: bottom left;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+  </style>
+</html>

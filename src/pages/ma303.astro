@@ -2,19 +2,17 @@
 import ClassEvent from '../components/classEvent.astro'
 import chen from '../../public/images/chenflix.png'
 // import MyComponent from '../components/slider'
-
-
 ---
+
 <html>
-<head>
-  <title></title>
-  <link rel="icon" type="image/svg+xml" href="images/capyFav.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <head>
+    <title></title>
+    <link rel="icon" type="image/svg+xml" href="images/capyFav.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body class="bg-black text-white">
-    <div class="pt-4 w-1/3 mx-auto">
+  <body class="bg-black text-white">
+    <div class="mx-auto w-1/3 pt-4">
       <a href="/">
         <img src={chen.src} alt="Logo" />
       </a>
@@ -27,67 +25,125 @@ import chen from '../../public/images/chenflix.png'
       <button color="success" id="reverseButton" class="text-2xl hover:text-red-600"><i class="fa-solid fa-arrows-rotate" id="icon"></i></button>
     </div>
 
-    <div class = "relative flex justify-center items-center h-auto" >
-      <div id="classEventContainer">
-        <ClassEvent weekday='Mon' description='Course Introduction' date='1/8' 
-        notes='https://www.math.purdue.edu/~chenjk/MA303S24/MA%2030300%20Spring%202024%20Introduction.pdf'/>
-        <ClassEvent weekday='Mon' description='Lesson 1 (5.2 The Eigenvalue Method for Homogeneous Systems)' date='1/8' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_xv382j1a' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%201%20%285.2%29.pdf'/>
-        <ClassEvent weekday='Wed' description='Lesson 2 (5.5 Multiple Eigenvalue Solutions) (No Video unfortunately)' date='1/10'  notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%202%20%285.5%29.pdf'/>
-        <ClassEvent weekday='Fri' description='Lesson 3 (5.3 Solution Curves of Linear Systems)' date='1/12' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_ynb5u3h7' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%203%20%285.3%29.pdf'/>
-        <ClassEvent weekday='Mon' description='MLK Day (no class)' date='1/15'/> 
-        <ClassEvent weekday='Wed' description='Lesson 4 (6.1 Stability and the Phase Planes)' date='1/17' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_t0ggp2si' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%204%20%286.1%29.pdf'/>
-        <ClassEvent weekday='Fri' description='Lesson 5 (6.2 Linear and Almost Linear Systems (part 1))' date='1/19' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_kcy6r9g1' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%205%20%286.2-1%29.pdf'/>
-        <ClassEvent weekday='Mon' description='Lesson 6 (6.2 Linear and Almost Linear Systems (part 2))' date='1/22' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_4ecbech6' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%206%20%286.2-2%29.pdf'/>
-        <ClassEvent weekday='Wed' description='Lesson 7 (6.3 Predator-Prey and Competitions (part 1))' date='1/24' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_qfq884fj' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%207%20%286.3-1%29.pdf'/>
-        <ClassEvent weekday='Fri' description='Lesson 8 (6.3 Predator-Prey and Competitions (part 2))' date='1/26' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_fef3f2m4' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%208%20%286.3-2%29.pdf'/>      
-        <ClassEvent weekday='Mon' description='Recap' date='1/29' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_4ilsl0vt' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Recap%281%29.pdf'/>
-        <ClassEvent weekday='Wed' description='Lesson 8 (7.1 Laplace Transforms and Inverse Transforms)' date='1/31' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_37www7t5' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%209%20%287.1%29.pdf'/>
-        <ClassEvent weekday='Fri' description='Lesson 9 (7.2 Transformation of Initial Value Problems)' date='2/2' 
-        videos='https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_wmi6p5vi' notes='https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%2010%20%287.2%29.pdf'/> 
-      </div>
-    <!-- </div> -->
-  
-  </div>
-</body>
+    <div class="relative flex h-auto flex-col items-center justify-center gap-3">
+      <ClassEvent
+        weekday="Mon"
+        description="Course Introduction"
+        date="1/8"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/MA%2030300%20Spring%202024%20Introduction.pdf"
+      />
+      <ClassEvent
+        weekday="Mon"
+        description="Lesson 1 (5.2 The Eigenvalue Method for Homogeneous Systems)"
+        date="1/8"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_xv382j1a"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%201%20%285.2%29.pdf"
+      />
+      <ClassEvent
+        weekday="Wed"
+        description="Lesson 2 (5.5 Multiple Eigenvalue Solutions) (No Video unfortunately)"
+        date="1/10"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%202%20%285.5%29.pdf"
+      />
+      <ClassEvent
+        weekday="Fri"
+        description="Lesson 3 (5.3 Solution Curves of Linear Systems)"
+        date="1/12"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_ynb5u3h7"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%203%20%285.3%29.pdf"
+      />
+      <ClassEvent weekday="Mon" description="MLK Day (no class)" date="1/15" />
+      <ClassEvent
+        weekday="Wed"
+        description="Lesson 4 (6.1 Stability and the Phase Planes)"
+        date="1/17"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_t0ggp2si"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%204%20%286.1%29.pdf"
+      />
+      <ClassEvent
+        weekday="Fri"
+        description="Lesson 5 (6.2 Linear and Almost Linear Systems (part 1))"
+        date="1/19"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_kcy6r9g1"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%205%20%286.2-1%29.pdf"
+      />
+      <ClassEvent
+        weekday="Mon"
+        description="Lesson 6 (6.2 Linear and Almost Linear Systems (part 2))"
+        date="1/22"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_4ecbech6"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%206%20%286.2-2%29.pdf"
+      />
+      <ClassEvent
+        weekday="Wed"
+        description="Lesson 7 (6.3 Predator-Prey and Competitions (part 1))"
+        date="1/24"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_qfq884fj"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%207%20%286.3-1%29.pdf"
+      />
+      <ClassEvent
+        weekday="Fri"
+        description="Lesson 8 (6.3 Predator-Prey and Competitions (part 2))"
+        date="1/26"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_fef3f2m4"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%208%20%286.3-2%29.pdf"
+      />
+      <ClassEvent
+        weekday="Mon"
+        description="Recap"
+        date="1/29"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_4ilsl0vt"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Recap%281%29.pdf"
+      />
+      <ClassEvent
+        weekday="Wed"
+        description="Lesson 8 (7.1 Laplace Transforms and Inverse Transforms)"
+        date="1/31"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_37www7t5"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%209%20%287.1%29.pdf"
+      />
+      <ClassEvent
+        weekday="Fri"
+        description="Lesson 9 (7.2 Transformation of Initial Value Problems)"
+        date="2/2"
+        videos="https://mediaspace.itap.purdue.edu/media/Spring+2024+-+MA303+-+Chen+%287A30%29/1_wmi6p5vi"
+        notes="https://www.math.purdue.edu/~chenjk/MA303S24/Lesson%2010%20%287.2%29.pdf"
+      />
+
+      <!-- </div> -->
+    </div>
+  </body>
 </html>
 
 <script>
-  const button = document.getElementById('reverseButton');
-  const icon = document.getElementById('icon');
-  const container = document.getElementById('classEventContainer');
-  let isSpinning = false;
+  const button = document.getElementById('reverseButton')
+  const icon = document.getElementById('icon')
+  const container = document.getElementById('classEventContainer')
+  let isSpinning = false
 
   if (button && container && icon) {
-    button.addEventListener('click', function() {
-      Array.from(container.children).reverse().forEach(child => container.appendChild(child));
-      
+    button.addEventListener('click', function () {
+      Array.from(container.children)
+        .reverse()
+        .forEach((child) => container.appendChild(child))
+
       // Add or remove the spin animation
       if (isSpinning) {
-        icon.classList.remove('fa-spin');
-        icon.classList.add('fa-spin-reverse');
-      } 
+        icon.classList.remove('fa-spin')
+        icon.classList.add('fa-spin-reverse')
+      }
       // else {
       //   icon.classList.remove('fa-spin-reverse');
       //   icon.classList.add('fa-spin');
       // }
-      
-      isSpinning = !isSpinning;
-      
-    
-      setTimeout(function() {
-        icon.classList.remove('fa-spin');
-        icon.classList.remove('fa-spin-reverse');
-      }, 1050);
-    });
+
+      isSpinning = !isSpinning
+
+      setTimeout(function () {
+        icon.classList.remove('fa-spin')
+        icon.classList.remove('fa-spin-reverse')
+      }, 1050)
+    })
   }
 </script>
 
@@ -98,10 +154,7 @@ import chen from '../../public/images/chenflix.png'
 </style>
 
 <style lang="scss">
-
   body {
     font-family: 'Poppins', sans-serif;
   }
-</style>
-
 </style>
