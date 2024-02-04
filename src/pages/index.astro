@@ -3,15 +3,12 @@ import CanvasContainer from '../components/CanvasContainer.astro'
 import Layout from '../components/Layout.astro'
 // import Link from '../components/Link.astro'
 import AllClassIcons from '../components/allClassIcons.astro'
-
-
 ---
-<Layout title="Chenflix">
-  <main class="bg-black text-white font-poppins">
-    <CanvasContainer/>
 
-    <div class="relative"> <img class="absolute top-4 left-1/2 transform -translate-x-1/2 w-1/3" src='images/chenflix.png' alt="Logo" />
-      <!-- <a href="/ChensGallery" class="absolute top-4 left-1/2 transform -translate-x-1/2 mt-28 hover:opacity-50">Chen's Gallery</p> </div> -->
-    <AllClassIcons class="icons"/>
+<Layout title="Chenflix">
+  <main class="font-poppins relative bg-black text-white">
+    <CanvasContainer />
+    <AllClassIcons class="icons" />
+    <img class="absolute left-1/2 top-4 w-1/3 -translate-x-1/2 transform" src="images/chenflix.png" alt="Logo" />
   </main>
 </Layout>
