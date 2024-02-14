@@ -92,7 +92,7 @@ const { date = '', description = '', weekday = 'Monday', videos = '', notes = ''
       <div class="w-16 align-baseline">
         {
           videos ? (
-            <a href={videos}>
+            <a href={videos} target="_blank">
               <i class="text-red-600 hover:opacity-70 fa-solid fa-video fa-xl" />
             </a>
           ) : (
@@ -103,7 +103,7 @@ const { date = '', description = '', weekday = 'Monday', videos = '', notes = ''
       <div class="w-16 align-baseline">
         {
           notes ? (
-            <a href={notes}>
+            <a href={notes} target="_blank">
               <i class="text-red-600 hover:opacity-70 fa-solid fa-file fa-xl" />
             </a>
           ) : (
@@ -114,7 +114,7 @@ const { date = '', description = '', weekday = 'Monday', videos = '', notes = ''
       <div class="w-16 align-baseline">
         {
           boilerexams ? (
-            <a href={boilerexams}>
+            <a href={boilerexams} target="_blank">
               <img class=" w-6 hover:opacity-70" src={BE.src} alt="Logo" />
             </a>
           ) : (
